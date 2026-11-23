@@ -87,7 +87,7 @@ for ch, v in chars.items():
             'z': [[i['f'], i.get('bu'), i.get('rk'), i.get('q'), i.get('t'), i.get('A'), i.get('r')] for i in r['zs']],
         })
     chars_c[ch] = {'p': v['py'], 'g': v['gloss'][:2], 'r': rs}
-    if v.get('nmc') == 1 and v['r'][0]['how'] == 'exact':
+    if v.get('nmc') == 1 and v['r'] and v['r'][0]['how'] == 'exact':
         chars_c[ch]['u'] = 1  # 中古音が一つだけ：對應づけの判斷を經ない
 # 廣韻にのみある字（上古音なし）
 for c, no, g in ent:

@@ -226,9 +226,19 @@ def strip_form(f):
     return clean(f)
 
 
+import os, sys
+sys.path.insert(0, 'scripts')
+from bs11 import load2, key as bskey
+BSL = load2() if os.path.exists('_private/bs11.txt') else {}
+BS_BY_KEY = collections.defaultdict(list)  # 異體字形で載っている項目のため：(上古形, 中古音) -> 一覧の字
+for _c, _es in BSL.items():
+    for _MC, _k, _d in _es:
+        BS_BY_KEY[(_k, _MC)].append((_c, _d))
+if not BSL:
+    print('警告: _private/bs11.txt が無いため白—沙の對應を確定できません')
 records = {}
 report = collections.Counter()
-unaligned = []
+dropped = []
 for line in open(RAW, encoding='utf8'):
     d = json.loads(line)
     ch = d['w']
@@ -252,52 +262,73 @@ for ch, r in records.items():
         report['mc:' + how] += 1
         mcs.append({'bx': b, 'xy': no, 'how': how})
     readings = [dict(m, bs=[], zs=[]) for m in mcs]
-    for sysname in ('bs', 'zs'):
-        forms = r[sysname]
-        for i, f in enumerate(forms):
-            p = parse_oc(f, sysname)
-            item = {'f': strip_form(f), 'bu': bu(p), 'rk': rhyme_key(p, sysname) if p and p['coda'] in CODA_CLASS else None}
+    nW = len(readings)
+    # ---- 白—沙：手元の BS 1.1 一覧で中古音との對を確定する（一覧に無い形は公開しない） ----
+    keyed = collections.defaultdict(list)
+    for MC, k, dsp in BSL.get(ch, []):
+        keyed[k].append((MC, dsp))
+    for f in r['bs']:
+        k = bskey(f)
+        if not BSL:
+            break
+        if k not in keyed:
+            # 一覧が異體字形（説/說，兑/兌 など）で載せている場合：同じ上古形・同じ中古音の項目を探す
+            alt = [(MC, d) for m in readings if m['bx'] for MC in [m['bx']] for (_c, d) in BS_BY_KEY.get((k, MC), [])]
+            if alt:
+                keyed[k] = list(dict.fromkeys(alt))
+                report['bs:via-variant'] += 1
+            else:
+                report['bs:not-in-list'] += 1
+                dropped.append((ch, 'bs', f))
+                continue
+        for MC, dsp in keyed[k]:
+            j = next((i for i, m in enumerate(readings) if m['bx'] == MC), None)
+            if j is None:
+                no, how = mc_to_xy(ch, MC)
+                if no is None:
+                    report['bs:list-mc-unmatched'] += 1
+                    continue
+                readings.append({'bx': MC, 'xy': no, 'how': 'bs-list' if how == 'exact' else how, 'bs': [], 'zs': []})
+                j = len(readings) - 1
+            if any(it['f'] == dsp for it in readings[j]['bs']):
+                continue
+            p = parse_oc(dsp, 'bs')
+            item = {'f': dsp, 'bu': bu(p), 'rk': rhyme_key(p, 'bs') if p and p['coda'] in CODA_CLASS else None, 'q': 'ok'}
             if p:
                 item.update({'A': p['A'], 'r': p['r'], 't': p['tone'], 'ini': p['ini']})
-            if p is None:
-                report[sysname + ':parse-fail'] += 1
-            scored = []
-            for j, m in enumerate(readings):
-                o = XY.get(m['xy']) if m['xy'] else None
-                sc = score(p, o) if o else -9
-                # 鄭張は Wiktionary 上で中古音の順に並ぶので順序一致に小さな加點
-                if sysname == 'zs' and len(forms) == len(readings) and i == j:
-                    sc += 1.5
-                scored.append((sc, j))
-            scored.sort(reverse=True)
-            if (not scored or scored[0][0] < 3) and p:
-                # Wiktionary 中古音に合うものが無い：廣韻の同字讀音から探す
-                have = {m['xy'] for m in readings}
-                best = None
-                for no in char_xy.get(ch, []):
-                    if no in have:
-                        continue
-                    sc = score(p, XY[no])
-                    if best is None or sc > best[0]:
-                        best = (sc, no)
-                if best and best[0] >= 3 + 2:
-                    readings.append({'bx': XY[best[1]].get('baxter'), 'xy': best[1], 'how': 'guangyun', 'bs': [], 'zs': []})
-                    scored = [(best[0], len(readings) - 1)]
-            if scored and scored[0][0] >= 3:
-                top = scored[0][0]
-                tied = [j for sc, j in scored if sc == top]
-                item['q'] = 'ok' if len(tied) == 1 else 'tie'
-                for j in tied:
-                    readings[j][sysname].append(item)
-                report[sysname + ':' + item['q']] += 1
-            else:
-                item['q'] = 'none'
-                report[sysname + ':unaligned'] += 1
-                unaligned.append((ch, sysname, f, [m['bx'] for m in mcs]))
-                readings.append({'bx': None, 'xy': None, 'how': 'oc-only', 'bs': [item] if sysname == 'bs' else [], 'zs': [item] if sysname == 'zs' else []})
-    out[ch] = {'py': r['py'][:4], 'gloss': r['gloss'], 'r': readings, 'nmc': len(mcs)}
+            readings[j]['bs'].append(item)
+            readings[j]['v'] = True
+            report['bs:verified'] += 1
+    # ---- 鄭張：照合できる資料が無いので，對應が一つに決まるものだけ公開する ----
+    forms = r['zs']
+    wk = [j for j in range(nW) if readings[j]['xy']]
+    for i, f in enumerate(forms):
+        p = parse_oc(f, 'zs')
+        if p is None:
+            report['zs:parse-fail'] += 1
+            continue
+        sc = sorted(((score(p, XY[readings[j]['xy']]), j) for j in wk), reverse=True)
+        j = None
+        if len(forms) == nW and len(wk) == nW and nW > 0:
+            own = score(p, XY[readings[i]['xy']])
+            if own >= 5 and own == sc[0][0] and sum(1 for x, _ in sc if x == own) == 1:
+                j = i
+        elif sc and sc[0][0] >= 5 and (len(sc) == 1 or sc[0][0] - sc[1][0] >= 2):
+            j = sc[0][1]
+        if j is None:
+            report['zs:dropped'] += 1
+            dropped.append((ch, 'zs', f))
+            continue
+        item = {'f': strip_form(f), 'bu': bu(p), 'rk': rhyme_key(p, 'zs') if p['coda'] in CODA_CLASS else None, 'q': 'ok',
+                'A': p['A'], 'r': p['r'], 't': p['tone'], 'ini': p['ini']}
+        readings[j]['zs'].append(item)
+        report['zs:ok'] += 1
+    # 公開する讀音：廣韻と完全一致したもの，または BS 一覧で確かめられたもの
+    keep = [m for m in readings if m['xy'] and (m['how'] in ('exact', 'bs-list') or m.get('v'))]
+    report['mc:dropped'] += len([m for m in readings if m not in keep])
+    out[ch] = {'py': r['py'][:4], 'gloss': r['gloss'], 'r': keep, 'nmc': nW}
 
 json.dump(out, open('data/build/chars.json', 'w', encoding='utf8'), ensure_ascii=False)
-json.dump({'counts': report, 'unaligned_sample': unaligned[:300], 'unaligned_total': len(unaligned)},
+json.dump({'counts': report, 'dropped_sample': dropped[:400], 'dropped_total': len(dropped)},
           open('data/build/align_report.json', 'w', encoding='utf8'), ensure_ascii=False, indent=1)
 print(len(out), dict(report))

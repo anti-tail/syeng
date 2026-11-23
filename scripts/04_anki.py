@@ -112,7 +112,7 @@ def build(lang):
     # 4. 字（白—沙が確定對應のもの）
     for c, v in chars.items():
         for r in v['r']:
-            if not r['x'] or not r['b'] or any(b[3] != 'ok' for b in r['b']) or r['h'] not in ('exact', 'baxter-only'):
+            if not r['x'] or not r['b'] or any(b[3] != 'ok' for b in r['b']) or r['h'] not in ('exact', 'baxter-only', 'bs-list'):
                 continue
             o = XY[r['x']]
             bs = '<br>'.join(f"*{e(b[0])}" + (f" {b[1]}部" if b[1] else '') for b in r['b'])

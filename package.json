@@ -4,7 +4,7 @@
   "description": "上古—中古漢語音韻學習工具",
   "scripts": {
     "fetch": "bash scripts/00_fetch_wiktionary.sh",
-    "build": "node scripts/01_export_qieyun.mjs && python3 scripts/02_align.py && python3 scripts/03_site_data.py && python3 scripts/05_shijing.py && python3 scripts/04_anki.py",
+    "build": "node scripts/01_export_qieyun.mjs && python3 scripts/02_align.py && python3 scripts/03_site_data.py && python3 scripts/05_shijing.py && python3 scripts/06_starostin.py && python3 scripts/04_anki.py",
     "serve": "python3 -m http.server -d docs 8000",
     "fetch:shijing": "bash scripts/00_fetch_shijing.sh"
   },

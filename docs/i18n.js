@@ -70,8 +70,10 @@ const I18N = {
     'anki.字·上古中古': '常用字：音韻地位、白—沙、鄭張', 'anki.小韻·音韻地位': '《廣韻》小韻：代表字 → 音韻地位', 'anki.詩經韻腳·王力韻部': '詩經韻腳字 → 王力韻部（GPL-3.0）',
     srcH: '資料來源', src: `<li>《廣韻》小韻、反切、釋義、音韻地位及各家推導（Baxter、切韻拼音、unt、王力、潘悟雲、高本漢、普通話推導）：nk2028 <a href="https://github.com/nk2028/tshet-uinh-js">tshet-uinh</a> 0.15.4 與 <a href="https://github.com/nk2028/tshet-uinh-examples">tshet-uinh-examples</a>（MIT）。</li>
   <li>白一平—沙加爾（2014）上古擬音、鄭張尚芳上古擬音、Baxter 中古音轉寫：英文維基詞典漢字條目，經 kaikki.org（wiktextract）抽取（CC BY-SA 4.0）。</li>
-  <li>詩經押韻：王力《詩經韻讀》（1980）與 Baxter《A Handbook of Old Chinese Phonology》（1992）的押韻判定，由 List 等數位化，見 <a href="https://github.com/digling/ard-data">digling/ard-data</a>（GPL-3.0）。本站的詩經資料（shijing.json、wangbu.json）與據此生成的 Anki 牌組依 GPL-3.0 提供。</li>`,
-    derH: '本站的推得部分', der: `<li><b>上古—中古讀音的對應</b>：維基詞典的抽取資料不保留多音字中上古讀音與中古讀音的配對。本站按聲調（*-ʔ／*-s／塞音尾）、音節類型（咽化或長元音 ↔ 一二四等）、韻尾類型（陰／陽／入）與聲母清濁評分配對。得分相同者標「對應未定」，無合適者標「未對應」。</li>
+  <li>詩經押韻：王力《詩經韻讀》（1980）與 Baxter《A Handbook of Old Chinese Phonology》（1992）的押韻判定，由 List 等數位化，見 <a href="https://github.com/digling/ard-data">digling/ard-data</a>（GPL-3.0）。本站的詩經資料（shijing.json、wangbu.json）與據此生成的 Anki 牌組依 GPL-3.0 提供。</li>
+  <li>Starostin（1989）上古擬音：<a href="https://github.com/digling/vowel-purity-paper">digling/vowel-purity-paper</a>（GPL-3.0），只含詩經韻腳字。本站的 starostin.json 依 GPL-3.0 提供。</li>`,
+    derH: '本站的推得部分', der: `<li><b>上古—中古讀音的對應</b>：維基詞典的抽取資料不保留多音字中上古讀音與中古讀音的配對，也遺漏了白—沙的中綴 *&lt;r&gt;。白—沙的配對與中綴都以白一平、沙加爾公布的 Baxter–Sagart Old Chinese reconstruction 1.1 一覽核對後確定，一覽中找不到的形式不收。鄭張尚芳沒有可核對的資料，只收對應能唯一確定者（讀音數與擬音數相同且按順序相合，或聲調、等、韻尾類型、清濁的評分明顯高於其他讀音）。中古讀音只收與《廣韻》小韻完全一致或經上述一覽核對者。</li>
+  <li><b>Starostin 1989</b>：只在讀音唯一、或能按聲調（*-ʔ、*-s、塞音尾）與中古讀音一一對應時收錄。</li>
   <li><b>韻部歸屬</b>：按擬音主元音與韻尾歸入王力三十部，非兩家原書的標註。白—沙 *-ik 歸質部、*-iŋ 歸真部、*-iw 歸幽部；鄭張 *-iɡ 歸質部、*-iŋ 歸真部。</li>
   <li><b>王力韻部（詩經韻腳）</b>：直接取自王力《詩經韻讀》的韻部注。合韻、通韻組裏的字，按王力擬音的韻母（從單一韻部組學得的對應）歸部。唐作藩《上古音手冊》等字表沒有可公開使用的數位資料，未收錄。</li>
   <li><b>韻目拼音</b>：用現代標準讀音，個別依音韻學慣例（如 上 shǎng、覺 jué、薺 jì、曾 zēng）。</li>`,
@@ -106,24 +108,24 @@ const I18N = {
     sylP: '横に声母，縦に声調と等を並べています。等は nk2028 の韻図等にしたがい，莊組は二等の位置，精組と以母は四等の位置，重紐 A 類は四等に置いています。マスの字は小韻の代表字で，押すとその字を引けます。',
     huKou: h => h + '口', huNeutral: '開合の区別がない字（唇音など）',
     muH: '声母', muSub: '切韻の38声母（nk2028 の体系）',
-    muP: '上古での由来の欄は，白一平・沙加爾 2014 の再構で，主音節の声母が中古のどの声母になったかを数えたものです。前置要素・咽頭化・*-r- は数えていません。数字にマウスを載せると例字が出ます。',
+    muP: '上古での由来の欄は，白一平・沙加爾 2014 の再建で，主音節の声母が中古のどの声母になったかを数えたものです。前置要素・咽頭化・*-r- は数えていません。数字にマウスを載せると例字が出ます。',
     th_mu: '母', th_py: '拼音', th_zu: '組', th_yin: '調音位置', th_qz: '清濁', th_36: '三十六字母', th_nxy: '小韻の数', th_ocsrc: '上古での由来（白一平・沙加爾）',
     buH: '韻部の対応', buSub: '上古の韻部から中古の韻系へ', sysLabel: '体系：',
-    buP: a => `韻部名は王力の三十部です。再構形の主母音と韻尾から，このサイトで部を割り当てています。原著の表記ではありません。中央の列は六母音式の韻類と音節の型で，A は${a}，B はそれ以外，r は *-r- 介音をもつもの，? は判定できないものです。線の太さは字数に比例します。`,
+    buP: a => `韻部名は王力の三十部です。再建形の主母音と韻尾から，このサイトで部を割り当てています。原著の表記ではありません。中央の列は六母音式の韻類と音節の型で，A は${a}，B はそれ以外，r は *-r- 介音をもつもの，? は判定できないものです。線の太さは字数に比例します。`,
     aBS: '咽頭化 *Cˤ をもつもの', aZS: '長母音 *Vː をもつもの',
     exH: '例字', th_rk: '韻類と型', th_mc: '中古', th_n: '字数', th_ex: '例字　上古 > 中古',
     sjH: '詩経の押韻', sjSel: '— 詩を選ぶ —', prevP: '← 前の詩', nextP: '次の詩 →', poemNo: n => `第${n}篇`,
-    sjPw: '色と記号は王力『詩経韻読』の押韻グループです。大文字は章をまたぐ韻です。右の欄が王力の韻部の注記，字の右上が王力の再構形です。',
-    sjPb: '色と記号は Baxter 1992 の押韻判定です。字の右上は Baxter 1992 のデータに付いている白一平・沙加爾式の再構形です。',
+    sjPw: '色と記号は王力『詩経韻読』の押韻グループです。大文字は章をまたぐ韻です。右の欄が王力の韻部の注記，字の右上が王力の再建形です。',
+    sjPb: '色と記号は Baxter 1992 の押韻判定です。字の右上は Baxter 1992 のデータに付いている白一平・沙加爾式の再建形です。',
     sjHover: '韻脚にマウスを載せると中古音と両体系の上古音が出ます。押すとその字を引けます。',
-    sjStat1: S => `王力『詩経韻読』と Baxter 1992 の押韻判定で，全305篇です。王力の押韻グループは ${S.groups} あり，そのうち韻部の注記があるのは，一つの部だけのものが ${S.labelled['部']}，合韻が ${S.labelled['合韻']}，通韻が ${S.labelled['通韻']} です。ここから ${S.chars} 字の韻脚について王力の韻部が得られました。合韻と通韻のグループの字は，王力の再構形の韻母から部を決めています。`,
+    sjStat1: S => `王力『詩経韻読』と Baxter 1992 の押韻判定で，全305篇です。王力の押韻グループは ${S.groups} あり，そのうち韻部の注記があるのは，一つの部だけのものが ${S.labelled['部']}，合韻が ${S.labelled['合韻']}，通韻が ${S.labelled['通韻']} です。ここから ${S.chars} 字の韻脚について王力の韻部が得られました。合韻と通韻のグループの字は，王力の再建形の韻母から部を決めています。`,
     sjStat2: '合韻は，主母音が近く韻尾の類が同じ韻部どうしの押韻，通韻は，主母音が同じ陰声・陽声・入声の韻部どうしの押韻です。王力のこの本では冬部を立てず侵部に含め，葉部を盍部と呼んでいます。',
     cmpH: '王力の韻部と，このサイトで推定した韻部の比較',
-    cmpP: '同じ字について，王力の詩経での韻部と，白一平・沙加爾および鄭張尚芳の再構形から推定した韻部を比べました。冬部と侵部は一致とみなしています。食い違いの多くは脂部と微部の境目や，再構形が根拠にする諧声と詩経の押韻とがずれるところです。',
+    cmpP: '同じ字について，王力の詩経での韻部と，白一平・沙加爾および鄭張尚芳の再建形から推定した韻部を比べました。冬部と侵部は一致とみなしています。食い違いの多くは脂部と微部の境目や，再建形が根拠にする諧声と詩経の押韻とがずれるところです。',
     agree: '一致', wangX: b => `王力 ${b}部`, siteX: b => `推定 ${b}部`,
     mixH: '合韻と通韻', th_bu: '韻部', th_type: '種類', th_groups: 'グループ数',
     chgH: '音変化の統計',
-    chgP: n => `Wiktionary で中古音が一つしかない字 ${n} 字だけを数えています。その字の上古音はすべてその中古音にさかのぼるとみなせるので，このサイトの対応づけの判断は入っていません。対角線から外れたマスは，再構形と『広韻』が食い違うところで，多くは又音，のちに生じた読み，特殊な変化です。上声は *-ʔ から，去声は *-s から生じたというオードリクールの説，A 型すなわち咽頭化や長母音をもつ音節が一・二・四等に，B 型が三等になること，*-r- と二等や重紐三等との関係を，表で確かめられます。`,
+    chgP: n => `Wiktionary で中古音が一つしかない字 ${n} 字だけを数えています。その字の上古音はすべてその中古音にさかのぼるとみなせるので，このサイトの対応づけの判断は入っていません。対角線から外れたマスは，再建形と『広韻』が食い違うところで，多くは又音，のちに生じた読み，特殊な変化です。上声は *-ʔ から，去声は *-s から生じたというオードリクールの説，A 型すなわち咽頭化や長母音をもつ音節が一・二・四等に，B 型が三等になること，*-r- と二等や重紐三等との関係を，表で確かめられます。`,
     chgTone: '韻尾・接尾辞と中古の声調', chgDeng: '音節の型と中古の等', rowOpen: '*-∅ と共鳴音の韻尾', rowStop: '閉鎖音の韻尾',
     hBS_A: '白一平・沙加爾 2014　A は咽頭化', hZS_A: '鄭張尚芳　A は長母音',
     ruleH: '規則のまとめ',
@@ -148,9 +150,11 @@ const I18N = {
     'anki.字·上古中古': '常用字：音韻地位・白一平・沙加爾・鄭張', 'anki.小韻·音韻地位': '広韻の小韻：代表字から音韻地位', 'anki.詩經韻腳·王力韻部': '詩経の韻脚字から王力の韻部　GPL-3.0',
     srcH: 'データの出典', src: `<li>広韻の小韻・反切・釈義・音韻地位と，各体系の推導（Baxter，切韻拼音，unt，王力，潘悟雲，高本漢，普通話）：nk2028 の <a href="https://github.com/nk2028/tshet-uinh-js">tshet-uinh</a> 0.15.4 と <a href="https://github.com/nk2028/tshet-uinh-examples">tshet-uinh-examples</a>，MIT ライセンス。</li>
   <li>白一平・沙加爾 2014 と鄭張尚芳の上古音，Baxter 式の中古音：英語版 Wiktionary の漢字の項目を kaikki.org（wiktextract）経由で取得，CC BY-SA 4.0。</li>
-  <li>詩経の押韻：王力『詩経韻読』1980 と Baxter『A Handbook of Old Chinese Phonology』1992 の押韻判定を List らがデジタル化した <a href="https://github.com/digling/ard-data">digling/ard-data</a>，GPL-3.0。このサイトの詩経データ shijing.json・wangbu.json と，そこから作った Anki デッキは GPL-3.0 で公開しています。</li>`,
-    derH: 'このサイトで推定した部分', der: `<li><b>上古音と中古音の対応</b>　Wiktionary から取ったデータでは，多音字の上古音と中古音の組み合わせが失われています。このサイトでは，声調すなわち *-ʔ・*-s・閉鎖音の韻尾，音節の型すなわち咽頭化や長母音と一・二・四等の関係，韻尾の類型すなわち陰・陽・入，声母の清濁から点数をつけて対応づけています。同点のものは対応未確定，合うものがないものは対応なしと表示します。</li>
-  <li><b>韻部の帰属</b>　再構形の主母音と韻尾から王力の三十部に割り当てたもので，原著の表記ではありません。白一平・沙加爾の *-ik は質部，*-iŋ は真部，*-iw は幽部，鄭張の *-iɡ は質部，*-iŋ は真部としています。</li>
+  <li>詩経の押韻：王力『詩経韻読』1980 と Baxter『A Handbook of Old Chinese Phonology』1992 の押韻判定を List らがデジタル化した <a href="https://github.com/digling/ard-data">digling/ard-data</a>，GPL-3.0。このサイトの詩経データ shijing.json・wangbu.json と，そこから作った Anki デッキは GPL-3.0 で公開しています。</li>
+  <li>Starostin 1989 の上古再建音：<a href="https://github.com/digling/vowel-purity-paper">digling/vowel-purity-paper</a>，GPL-3.0。詩経の韻脚字だけです。このサイトの starostin.json は GPL-3.0 で公開しています。</li>`,
+    derH: 'このサイトで推定した部分', der: `<li><b>上古音と中古音の対応</b>　Wiktionary から取ったデータでは，多音字の上古音と中古音の組み合わせが失われ，白一平・沙加爾の挿入辞 *&lt;r&gt; も抜けていました。白一平・沙加爾の形は，二人が公開している Baxter–Sagart Old Chinese reconstruction 1.1 の一覧と照合して組み合わせと挿入辞を確定し，一覧にない形は収めていません。鄭張尚芳は照合できる資料がないため，対応が一つに決まるものだけを収めています。読みの数と再建音の数が同じで順に合う場合か，声調・等・韻尾の類型・清濁による点数がほかの読みより明らかに高い場合です。中古音は，広韻の小韻と完全に一致したものか，上の一覧で確かめられたものだけです。</li>
+  <li><b>Starostin 1989</b>　読みが一つの字か，声調すなわち *-ʔ・*-s・閉鎖音の韻尾によって中古音と一対一に対応する場合だけ収めています。</li>
+  <li><b>韻部の帰属</b>　再建形の主母音と韻尾から王力の三十部に割り当てたもので，原著の表記ではありません。白一平・沙加爾の *-ik は質部，*-iŋ は真部，*-iw は幽部，鄭張の *-iɡ は質部，*-iŋ は真部としています。</li>
   <li><b>王力の韻部（詩経の韻脚）</b>　王力『詩経韻読』の韻部の注記をそのまま使っています。合韻・通韻のグループの字は，一つの部だけのグループから学習した，王力の韻母と部との対応で決めています。唐作藩『上古音手冊』などの字表は，公開して使えるデジタルデータがないため入れていません。</li>
   <li><b>韻目の拼音</b>　現代の標準的な読みです。一部は音韻学の慣用にしたがっています。上は shǎng，覺は jué，薺は jì，曾は zēng と読みます。</li>`,
     notIncl: '白一平・沙加爾 2014 や鄭張尚芳『上古音系』など，原著の内容はこのサイトに収めていません。',
@@ -226,8 +230,10 @@ const I18N = {
     'anki.字·上古中古': 'Common characters: position, Baxter–Sagart, Zhengzhang', 'anki.小韻·音韻地位': 'Guangyun homophone groups: head character → position', 'anki.詩經韻腳·王力韻部': "Shijing rhyme words → Wang Li's rhyme group (GPL-3.0)",
     srcH: 'Sources', src: `<li>Guangyun homophone groups, fanqie, glosses, phonological positions and derived readings (Baxter, Tshet-uinh, unt, Wang Li, Pan Wuyun, Karlgren, Mandarin): nk2028 <a href="https://github.com/nk2028/tshet-uinh-js">tshet-uinh</a> 0.15.4 and <a href="https://github.com/nk2028/tshet-uinh-examples">tshet-uinh-examples</a> (MIT).</li>
   <li>Baxter–Sagart (2014) and Zhengzhang Old Chinese, and Baxter's Middle Chinese transcription: English Wiktionary character entries, extracted via kaikki.org (wiktextract), CC BY-SA 4.0.</li>
-  <li>Shijing rhymes: the rhyme judgments of Wang Li, Shijing yundu (1980), and Baxter, A Handbook of Old Chinese Phonology (1992), digitized by List et al. in <a href="https://github.com/digling/ard-data">digling/ard-data</a> (GPL-3.0). This site's Shijing data (shijing.json, wangbu.json) and the Anki deck made from it are released under GPL-3.0.</li>`,
-    derH: 'What this site infers', der: `<li><b>Old–Middle Chinese matching</b>: the Wiktionary extract loses the pairing between Old and Middle Chinese readings of characters with several readings. This site scores pairings by tone (*-ʔ, *-s, stop codas), syllable type (pharyngealization or long vowels ↔ Divisions I, II, IV), coda type (open, nasal, stop) and voicing of the initial. Ties are marked "match uncertain" and unmatched forms "unmatched".</li>
+  <li>Shijing rhymes: the rhyme judgments of Wang Li, Shijing yundu (1980), and Baxter, A Handbook of Old Chinese Phonology (1992), digitized by List et al. in <a href="https://github.com/digling/ard-data">digling/ard-data</a> (GPL-3.0). This site's Shijing data (shijing.json, wangbu.json) and the Anki deck made from it are released under GPL-3.0.</li>
+  <li>Starostin (1989) Old Chinese: <a href="https://github.com/digling/vowel-purity-paper">digling/vowel-purity-paper</a> (GPL-3.0), Shijing rhyme words only; this site's starostin.json is released under GPL-3.0.</li>`,
+    derH: 'What this site infers', der: `<li><b>Old–Middle Chinese matching</b>: the Wiktionary extract loses the pairing between Old and Middle Chinese readings, and also drops Baxter–Sagart's infix *&lt;r&gt;. Baxter–Sagart forms are checked against the authors' published Baxter–Sagart Old Chinese reconstruction 1.1 list, which fixes both the pairing and the infixes; forms not in the list are left out. For Zhengzhang there is no list to check against, so only forms whose match is unique are kept: when the numbers of readings and forms agree and match in order, or when the score by tone, division, coda type and voicing is clearly higher than for any other reading. Middle Chinese readings are kept only when they match a Guangyun homophone group exactly or are confirmed by the list.</li>
+  <li><b>Starostin 1989</b>: included only for characters with one reading, or where tone (*-ʔ, *-s, stop coda) matches the Middle Chinese readings one to one.</li>
   <li><b>Rhyme groups</b>: assigned to Wang Li's 30 groups from the main vowel and coda of each reconstruction; these are not the authors' own labels. Baxter–Sagart *-ik goes to 質, *-iŋ to 真, *-iw to 幽; Zhengzhang *-iɡ to 質, *-iŋ to 真.</li>
   <li><b>Wang Li's rhyme groups (Shijing rhyme words)</b>: taken directly from his notes in Shijing yundu. Words in mixed (hé yùn / tōng yùn) groups are assigned by the final of his reconstruction, using the correspondence learned from single-group stanzas. Character tables such as Tang Zuofan's Shanggu yin shouce have no openly usable digital data and are not included.</li>
   <li><b>Pinyin of rhyme headings</b>: standard modern readings, with a few customary readings of the field (上 shǎng, 覺 jué, 薺 jì, 曾 zēng).</li>`,

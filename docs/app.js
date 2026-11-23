@@ -80,7 +80,7 @@ PAGES[''] = async () => {
 };
 
 PAGES['查字'] = async (qs) => {
-  await need('xiaoyun', 'yun206', 'chars', 'wangbu');
+  await need('xiaoyun', 'yun206', 'chars', 'wangbu', 'starostin');
   const q = (qs.get('q') || '').trim();
   let h = `<h1>${T('lookupH')}</h1><form class="row" onsubmit="location.hash='#/查字?q='+encodeURIComponent(this.q.value);return false">
     <input class="big han" name="q" type="search" value="${esc(q)}" placeholder="${esc(T('lookupPh'))}"> <button class="pri">${T('lookupBtn')}</button></form>`;
@@ -100,14 +100,14 @@ function charCard(c) {
       <td>${o ? `<span class="han">${esc(o.代表字)}</span> <span class="mut small">${esc(o.反切 || '')}切</span>` : '—'}${HOW(r.h) ? `<span class="tag">${HOW(r.h)}</span>` : ''}</td>
       <td class="han">${o ? `${esc(diwei(o))}<br><span class="mut small">${esc(xiName(o))}${T('xiSuffix')} · ${esc(o.攝)}${T('sheSuffix')} · ${esc(o.清濁)}</span>` : ''}</td>
       <td class="rom">${esc(r.bx || (o && o.baxter) || '')}${o ? `<br><span class="mut small">${esc(o.tupa)}</span>` : ''}</td>
-      <td>${ocCell(r.b)}</td><td>${ocCell(r.z)}</td>
+      <td>${ocCell(r.b)}</td><td>${ocCell(r.z)}</td><td>${(D.starostin[c] || []).filter(([no]) => no === r.x).map(([, f]) => `<span class="ipa">*${esc(f)}</span>`).join('<br>') || '<span class="mut">—</span>'}</td>
       <td class="small mut">${esc(r.g || '')}</td></tr>`;
   }
   const wb = D.wangbu.chars[c];
   const wline = wb ? `<p class="small">${T('wangLine')}${Object.entries(wb.bu).map(([b, n]) => `<b class="han">${b}部</b>×${n}`).join('、')}　<span class="ipa mut">${esc(wb.rc.map(x => '*' + x).join(' '))}</span>　${wb.refs.map(([n, st]) => `<a href="#/詩經?p=${n}">${st}</a>`).join(' ')}</p>` : '';
   return `<div class="card"><div class="row"><span class="zi">${esc(c)}</span>
     <span class="rom">${esc(v.p.join(', '))}</span><span class="mut small">${esc(v.g.join('; '))}</span></div>${wline}
-    <div class="scroll"><table><tr><th></th><th>${T('th_xy')}</th><th>${T('th_dw')}</th><th>${T('th_bx')}</th><th>${T('th_bs')}</th><th>${T('th_zs')}</th><th>${T('th_gl')}</th></tr>${rows}</table></div></div>`;
+    <div class="scroll"><table><tr><th></th><th>${T('th_xy')}</th><th>${T('th_dw')}</th><th>${T('th_bx')}</th><th>${T('th_bs')}</th><th>${T('th_zs')}</th><th>Starostin 1989</th><th>${T('th_gl')}</th></tr>${rows}</table></div></div>`;
 }
 
 PAGES['韻表'] = async () => {
@@ -302,100 +302,6 @@ PAGES['術語'] = async (qs) => {
 };
 
 const tdef = t => t['def_' + LANG] || t.def;
-/* ---------- 測驗 ---------- */
-const QUIZ = {
-  韻目拼音: { need: ['yun206'], gen() {
-    const all = D.yun206.flatMap(y => TONES.filter(t => y[t]).map(t => ({ m: y[t], py: y.stat[t].py, y, t })));
-    const a = pick(all); const opts = sample([...new Set(all.map(x => x.py).filter(p => p !== a.py))], 3);
-    return { q: `<span class="han">${a.m}</span> <span class="small mut">${T('qYunPy', a.t)}</span>`, ans: a.py, opts: [a.py, ...opts], bm: { id: 'y:' + a.y.no, type: 'yun', no: a.y.no }, note: `${a.m}：${a.py}${a.y.stat[a.t].pynote ? '（' + a.y.stat[a.t].pynote + '）' : ''}` };
-  } },
-  四聲相承: { need: ['yun206'], gen() {
-    const ys = D.yun206.filter(y => y.平 && (y.上 || y.去 || y.入));
-    const a = pick(ys); const t = pick(TONES.filter(t => t !== '平' && a[t]));
-    const opts = sample(D.yun206.map(y => y[t]).filter(x => x && x !== a[t]), 3);
-    return { q: T('qSisheng', `<span class="han">${a.平}</span>`, t), ans: a[t], opts: [a[t], ...opts], bm: { id: 'y:' + a.no, type: 'yun', no: a.no }, note: `${a.平}${a.上 || '—'}${a.去 || '—'}${a.入 || '—'}` };
-  } },
-  韻目歸攝: { need: ['yun206'], gen() {
-    const a = pick(D.yun206); const m = a[pick(TONES.filter(t => a[t]))];
-    const opts = sample([...new Set(D.yun206.map(y => y.攝))].filter(s => s !== a.攝), 3);
-    return { q: T('qShe', `<span class="han">${m}</span>`), ans: a.攝, opts: [a.攝, ...opts], bm: { id: 'y:' + a.no, type: 'yun', no: a.no }, note: `${m} → ${a.攝}攝` };
-  } },
-  聲母清濁: { need: ['mu'], gen() {
-    const a = pick(D.mu); const opts = ['全清', '次清', '全濁', '次濁'];
-    return { q: T('qQz', `<span class="han">${a.母}</span>`, a.py), ans: a.清濁, opts, fixed: true, bm: { id: 'm:' + a.母, type: 'mu', m: a.母 }, note: T('nQz', a) };
-  } },
-  字的音韻地位: { need: ['xiaoyun', 'yun206', 'chars'], gen() {
-    const r = randReading(true); const o = D.XY.get(r.x);
-    const others = sample([...D.XY.values()].filter(x => x.聲 && x.韻 === o.韻 && x.no !== o.no), 6).map(diwei).filter(x => x !== diwei(o));
-    const more = sample([...D.XY.values()].filter(x => x.聲 && x.母 === o.母 && x.no !== o.no), 4).map(diwei);
-    const opts = [...new Set([...others, ...more])].filter(x => x !== diwei(o)).slice(0, 3);
-    return { q: `<span class="han">${r.c}</span> <span class="small mut">${esc(r.g)}</span>`, ans: diwei(o), opts: [diwei(o), ...opts], bm: { id: 'c:' + r.c + '|' + r.x, type: 'char', c: r.c, x: r.x }, note: `${r.c}：${diwei(o)}，${o.反切}切，${o.baxter}` };
-  } },
-  字的上古韻部: { need: ['xiaoyun', 'yun206', 'chars', 'corr'], gen() {
-    const r = randReading(true, 'b'); const bu = r.b[0][1]; const o = D.XY.get(r.x);
-    const near = D.corr.bu30.filter(b => b !== bu);
-    return { q: `<span class="han">${r.c}</span> <span class="small mut rom">${esc(o.baxter)}</span> ${T('qBu')}`, ans: bu + '部', opts: [bu + '部', ...sample(near, 3).map(b => b + '部')], bm: { id: 'c:' + r.c + '|' + r.x, type: 'char', c: r.c, x: r.x }, note: `${r.c} *${r.b[0][0]} (${T('bsShort')}) → ${bu}部; ${T('zsShort')} ${r.z.map(z => '*' + z[0]).join(' ') || '—'}` };
-  } },
-  上古到中古: { need: ['xiaoyun', 'yun206', 'chars'], gen() {
-    const r = randReading(true, 'b'); const o = D.XY.get(r.x);
-    const pool = [...D.XY.values()].filter(x => x.baxter && x.baxter !== o.baxter && (x.韻 === o.韻 || x.母 === o.母));
-    return { q: `<span class="ipa">*${esc(r.b[0][0])}</span> <span class="small mut">${T('qOcMc')}</span>`, ans: o.baxter, opts: [o.baxter, ...sample([...new Set(pool.map(x => x.baxter))], 3)], rom: true, bm: { id: 'c:' + r.c + '|' + r.x, type: 'char', c: r.c, x: r.x }, note: `${r.c} *${r.b[0][0]} > ${o.baxter}（${diwei(o)}）` };
-  } },
-  詩經韻腳歸部: { need: ['shijing', 'wangbu'], gen() {
-    const pool = [];
-    for (const p of D.shijing.poems) for (const st of p.s) for (const [L, g] of Object.entries(st.g)) if (/^.部$/.test(g) && st.l.filter(l => l[2] === L && l[1]).length >= 2) pool.push([p, st, L, g]);
-    const [p, st, L, g] = pick(pool);
-    const lines = st.l.map(([t, rw, l2]) => { if (l2 !== L || !rw) return esc(t); const k = t.lastIndexOf(rw); return k >= 0 ? esc(t.slice(0, k)) + `<b style="color:var(--acc)">${esc(rw)}</b>` + esc(t.slice(k + 1)) : esc(t); }).join('<br>');
-    const ans = g; const opts = sample(['之', '職', '蒸', '幽', '覺', '宵', '藥', '侯', '屋', '東', '魚', '鐸', '陽', '支', '錫', '耕', '脂', '質', '真', '微', '物', '文', '歌', '月', '元', '緝', '侵', '盍', '談'].map(b => b + '部').filter(b => b !== ans), 3);
-    const ch = st.l.find(l => l[2] === L && l[1])[1];
-    return { q: `<div style="font-size:1.15rem;line-height:1.9">${lines}</div><div class="small mut">${esc(T('qSj', p.t, st.id))}</div>`, ans, opts: [ans, ...opts], bm: { id: 'c:' + ch + '|', type: 'char', c: ch, x: (D.chars?.[ch]?.r[0]?.x) || null }, note: `${p.t} ${st.id}：${g} — ${T('nWang')}` };
-  } },
-  術語拼音: { need: ['terms'], gen() {
-    const a = pick(D.terms); const opts = sample(D.terms.filter(t => t.py !== a.py && t.cat === a.cat), 3).map(t => t.py);
-    if (opts.length < 3) opts.push(...sample(D.terms.filter(t => t.py !== a.py && !opts.includes(t.py)), 3 - opts.length).map(t => t.py));
-    return { q: `<span class="han">${a.t}</span>`, ans: a.py, opts: [a.py, ...opts], rom: true, bm: { id: 't:' + a.t, type: 'term', t: a.t }, note: `${a.t} ${a.py}：${tdef(a)}` };
-  } },
-};
-let readingPool = null;
-function randReading(ok, need) {
-  if (!readingPool) {
-    readingPool = [];
-    for (const [c, v] of Object.entries(D.chars)) for (const r of v.r) if (r.x && r.b.length && r.b.every(b => b[3] === 'ok') && r.h === 'exact') readingPool.push({ c, ...r });
-  }
-  const bms = QS.only ? BM.all().filter(b => b.type === 'char') : null;
-  if (bms && bms.length) { const b = pick(bms); const r = D.chars[b.c]?.r.find(r => r.x === b.x); if (r && (!need || r[need].length)) return { c: b.c, ...r }; }
-  return pick(readingPool);
-}
-const QS = { only: false, right: 0, total: 0 };
-PAGES['測驗'] = async (qs) => {
-  const kind = qs.get('k') || '韻目拼音';
-  QS.only = qs.get('bm') === '1';
-  const h = `<h1>${T('quizH')}</h1><div class="row">${Object.keys(QUIZ).map(k => `<a class="pill ${k === kind ? 'on' : ''}" href="#/測驗?k=${encodeURIComponent(k)}${QS.only ? '&bm=1' : ''}">${T('q.' + k)}</a>`).join('')}</div>
-   <p class="small"><label><input type="checkbox" ${QS.only ? 'checked' : ''} onchange="location.hash='#/測驗?k=${encodeURIComponent(kind)}'+(this.checked?'&bm=1':'')"> ${T('onlyBm')}</label>　${T('quizHint')}</p>
-   <div class="card quiz" id="quiz"></div>`;
-  setTimeout(() => runQuiz(kind), 0);
-  return h;
-};
-async function runQuiz(kind) {
-  const Q = QUIZ[kind]; await need(...Q.need, 'chars');
-  const box = $('#quiz'); if (!box) return;
-  let item; for (let i = 0; i < 20; i++) { try { item = Q.gen(); if (item && new Set(item.opts).size >= 4) break; } catch (e) { item = null; } }
-  const opts = item.fixed ? item.opts : sample([...new Set(item.opts)].slice(0, 4), 4);
-  box.innerHTML = `<div class="q">${item.q}</div><div class="ch">${opts.map((o, i) => `<button data-i="${i}" class="${item.rom ? 'rom' : 'han'}">${i + 1}. ${esc(o)}</button>`).join('')}</div>
-    <div class="fb"></div><div class="row"><span class="mut small">${QS.right} / ${QS.total}</span><button id="next">${T('next')}</button>${starBtn(item.bm)}</div>`;
-  let done = false;
-  const answer = i => {
-    if (done) return; done = true; QS.total++;
-    const ok = opts[i] === item.ans; if (ok) QS.right++; else BM.add(item.bm);
-    box.querySelectorAll('.ch button').forEach((b, j) => { if (opts[j] === item.ans) b.classList.add('ok'); else if (j === i) b.classList.add('ng'); });
-    box.querySelector('.fb').innerHTML = `${ok ? T('right') : T('wrong')}　<span class="small">${esc(item.note)}</span>`;
-    box.querySelector('.row .mut').textContent = `${QS.right} / ${QS.total}`;
-  };
-  box.querySelectorAll('.ch button').forEach(b => b.onclick = () => answer(+b.dataset.i));
-  $('#next').onclick = () => runQuiz(kind);
-  document.onkeydown = e => { if (!$('#quiz')) return; if (/^[1-4]$/.test(e.key)) answer(+e.key - 1); if (e.key === 'Enter' && done) runQuiz(kind); };
-}
-
 /* ---------- 書籤 ---------- */
 PAGES['書籤'] = async () => {
   await need('xiaoyun', 'yun206', 'chars', 'terms', 'mu');
@@ -461,4 +367,4 @@ function applyChrome() {
   BM.badge();
 }
 window.addEventListener('hashchange', route);
-applyChrome(); route();
+window.addEventListener('DOMContentLoaded', () => { applyChrome(); route(); });

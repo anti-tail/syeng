@@ -20,6 +20,10 @@ const QL = {
     qYunDeng: y => `${y} 韻見於哪些等？`, qDengYun: d => `下列哪個韻只見於${d}等？`, qMuDeng: m => `${m}母見於哪些等？`,
     qYunNoMu: (y, d) => `下列哪個聲母不見於 ${y} 韻（${d}等）？`, qCompl: m => `下列哪個聲母與${m}母呈互補分布（所見的等不重疊）？`,
     distNote: '分布按《廣韻》小韻統計，只計佔該類 8% 以上且至少 5 個小韻的等，少數例外不計。',
+    'k.韻部表': '韻部對應表填空', grpTable: '表', pickBu: '韻部', random: '隨機', check: '核對', newTable: '換一張表',
+    huRow: { 開: '開口', 合: '合口', 脣: '脣音（開合中立）' }, tblQ: b => `填出王力 ${b}部 各等、開合在《廣韻》中的韻（舉平以賅上去入）。`,
+    tblNote: '表中只用讀音唯一、且王力《詩經韻讀》的歸部與本站按白—沙、鄭張推得的韻部一致的字；一個格子裏有兩個以上的字的韻才算答案。滑鼠移到格子上可看例字。',
+    tblScore: (a, b) => `${a} / ${b} 格正確`,
   },
   ja: {
     mode: '答え方', choice: '選択式', input: '入力式', level: '難易度', easy: 'やさしい', normal: 'ふつう', hard: 'むずかしい',
@@ -40,6 +44,10 @@ const QL = {
     qYunDeng: y => `${y}韻に現れる等は？`, qDengYun: d => `${d}等だけに現れる韻はどれ？`, qMuDeng: m => `${m}母が現れる等は？`,
     qYunNoMu: (y, d) => `${y}韻（${d}等）に現れない声母はどれ？`, qCompl: m => `${m}母と相補分布する声母，つまり現れる等が重ならない声母はどれ？`,
     distNote: '分布は広韻の小韻で数えています。その類の8%以上かつ5小韻以上ある等だけを数え，少数の例外は除いています。',
+    'k.韻部表': '韻部の対応表をうめる', grpTable: '表', pickBu: '韻部', random: 'おまかせ', check: '答え合わせ', newTable: '別の表',
+    huRow: { 開: '開口', 合: '合口', 脣: '唇音　開合の区別なし' }, tblQ: b => `王力の${b}部が，それぞれの等と開合で広韻のどの韻になるかを埋めてください。韻は平声で代表させます。`,
+    tblNote: '表には，読みが一つで，王力『詩経韻読』の帰部と，白一平・沙加爾または鄭張尚芳からこのサイトで推定した韻部とが一致する字だけを使っています。一つのマスに2字以上ある韻だけを正解にしています。マスにマウスを載せると例字が出ます。',
+    tblScore: (a, b) => `${b} マス中 ${a} マス正解`,
   },
   en: {
     mode: 'Answer by', choice: 'Choice', input: 'Typing', level: 'Difficulty', easy: 'Easy', normal: 'Normal', hard: 'Hard',
@@ -60,6 +68,10 @@ const QL = {
     qYunDeng: y => `In which divisions does the rhyme ${y} occur?`, qDengYun: d => `Which rhyme occurs only in Division ${d}?`, qMuDeng: m => `In which divisions does the initial ${m} occur?`,
     qYunNoMu: (y, d) => `Which initial never occurs in the rhyme ${y} (Division ${d})?`, qCompl: m => `Which initial is in complementary distribution with ${m} (no shared division)?`,
     distNote: 'Distributions are counted over Guangyun homophone groups; a division counts only if it has at least 5 groups and 8% of the class, so isolated exceptions are ignored.',
+    'k.韻部表': 'Fill in a rhyme-group table', grpTable: 'Tables', pickBu: 'Rhyme group', random: 'Random', check: 'Check', newTable: 'Another table',
+    huRow: { 開: 'Open', 合: 'Rounded', 脣: 'Labials (no open/round contrast)' }, tblQ: b => `Fill in the Guangyun rhyme (named by its level-tone heading) that Wang Li's ${b} group becomes in each division and openness.`,
+    tblNote: "Only characters with a single reading whose rhyme group in Wang Li's Shijing yundu agrees with the group inferred here from Baxter–Sagart or Zhengzhang are used; a rhyme counts as an answer only if at least two characters attest it. Hover over a cell for examples.",
+    tblScore: (a, b) => `${a} of ${b} cells correct`,
   },
 };
 const QT = k => QL[LANG]?.[k] ?? QL.zh[k] ?? k;
@@ -333,6 +345,7 @@ const QK = {
 const QGROUPS = [['grpBasic', ['韻目拼音', '四聲相承', '韻目歸攝', '聲母清濁', '術語拼音']],
   ['grpChar', ['字的聲母', '字的等', '字的開合', '字的韻', '字的聲調', '字的攝', '字的音韻地位', '字的中古音']],
   ['grpDist', ['韻的等', '等的韻', '聲母的等', '韻不配的聲母', '相補分布']],
+  ['grpTable', ['韻部表']],
   ['grpOther', ['上古到中古', '中古到上古', 'Starostin', '字的上古韻部', '詩經韻腳歸部']]];
 const NEEDS_CHAR = new Set(['字的聲母', '字的等', '字的開合', '字的韻', '字的聲調', '字的攝', '字的音韻地位', '字的中古音', '上古到中古', '中古到上古', 'Starostin', '字的上古韻部']);
 
@@ -354,7 +367,7 @@ function check(item, input) {
 PAGES['測驗'] = async (qs) => {
   await need('xiaoyun', 'yun206');
   let kind = qs.get('k') || '韻目拼音';
-  if (!QK[kind] || (kind === '四聲相承' && QSET.tones === 'ping')) kind = '韻目拼音';
+  if ((!QK[kind] && kind !== '韻部表') || (kind === '四聲相承' && QSET.tones === 'ping')) kind = '韻目拼音';
   if (qs.get('bm') === '1') QSET.only = true;
   const xs = [...D.XY.values()].filter(o => o.聲);
   const uniq = k => [...new Set(xs.map(o => k === 'hu' ? (o.呼 || '中') : k === 'zu' ? (o.組 || o.母) : o[{ she: '攝', deng: '等', sheng: '聲' }[k]]))].filter(Boolean);
@@ -376,6 +389,7 @@ PAGES['測驗'] = async (qs) => {
    </div>
    <div class="card quiz" id="quiz"></div>`;
   setTimeout(() => {
+    if (kind === '韻部表') { document.querySelectorAll('[data-set]').forEach(a => a.onclick = () => { const [k, v] = a.dataset.set.split('='); QSET[k] = v; saveQSET(); route(); }); $('#onlybm').onchange = e => { QSET.only = e.target.checked; saveQSET(); }; runTable(qs.get('b') || ''); return; }
     document.querySelectorAll('[data-set]').forEach(a => a.onclick = () => { const [k, v] = a.dataset.set.split('='); QSET[k] = v; saveQSET(); route(); });
     document.querySelectorAll('[data-f]').forEach(s => s.onchange = () => { QSET[s.dataset.f] = s.value; saveQSET(); route(); });
     $('#onlybm').onchange = e => { QSET.only = e.target.checked; saveQSET(); route(); };
@@ -431,4 +445,61 @@ async function runQuiz(kind) {
     document.onkeydown = e => { if (!$('#quiz') || e.target.tagName === 'INPUT') return; if (/^[1-9]$/.test(e.key) && +e.key <= opts.length) answer(+e.key - 1); if (e.key === 'Enter' && done) runQuiz(kind); };
   }
   $('#next').onclick = () => runQuiz(kind);
+}
+
+/* ---------- 表うめ：王力の韻部 × 開合・等 → 中古韻系 ---------- */
+async function runTable(want) {
+  await need('wangbu', 'yun206');
+  const box = $('#quiz'); if (!box) return;
+  const T5 = D.wangbu.tables;
+  const bus = Object.keys(T5).sort((a, b) => Object.keys(BU_F).indexOf(a) - Object.keys(BU_F).indexOf(b));
+  const bu = want && T5[want] ? want : pick(bus);
+  const tb = T5[bu];
+  const rows = ['開', '合', '脣'].filter(h => DENG.some(d => tb[h + d]));
+  const keys = rows.flatMap(h => DENG.map(d => h + d)).filter(k => tb[k]);
+  const frac = { easy: 0.4, normal: 0.7, hard: 1 }[QSET.level] || 0.7;
+  const blanks = new Set(sample(keys, Math.max(1, Math.round(keys.length * frac))));
+  const names = D.yun206.map(y => y.name);
+  const sheOf = n => D.yun206.find(y => y.name === n)?.攝;
+  const optsFor = k => {
+    const ans = Object.keys(tb[k].ans);
+    const sim = (a, b) => (sheOf(b) === sheOf(a) ? 2 : 0) + (SHE_G[sheOf(b)] === SHE_G[sheOf(a)] ? 1 : 0);
+    const d = distract(ans[0], names, sim, QSET.level === 'easy' ? 3 : 5, ans);
+    return sample([...ans, ...d], ans.length + d.length);
+  };
+  const tip = k => Object.entries(tb[k].ans).map(([y, cs]) => `${y}：${cs.join('')}${tb[k].cnt[y] > cs.length ? '…' : ''}（${tb[k].cnt[y]}）`).join('\n');
+  const sel = `<select id="tbsel"><option value="">${QT('random')}</option>${bus.map(b => `<option ${b === bu ? 'selected' : ''}>${b}</option>`).join('')}</select>`;
+  let h = `<div class="row"><b>${QT('pickBu')}</b> ${sel}</div><p class="q" style="font-size:1.1rem">${QT('tblQ')(`<span class="han">${bu}</span>`)}</p>
+    <div class="scroll"><table class="grid" style="font-size:1.05rem"><tr><th></th>${DENG.map(d => `<th>${d}${LANG === 'en' ? '' : '等'}</th>`).join('')}</tr>`;
+  for (const hu of rows) {
+    h += `<tr><th style="white-space:nowrap">${QT('huRow')[hu]}</th>`;
+    for (const d of DENG) {
+      const k = hu + d;
+      if (!tb[k]) { h += '<td></td>'; continue; }
+      if (!blanks.has(k)) { h += `<td class="han" title="${esc(tip(k))}">${Object.keys(tb[k].ans).join('・')}</td>`; continue; }
+      h += `<td data-k="${k}" title="">` + (QSET.mode === 'input'
+        ? `<input class="han tbin" style="width:5em;font-size:1rem" autocomplete="off">`
+        : `<select class="han tbin"><option value=""></option>${optsFor(k).map(o => `<option>${o}</option>`).join('')}</select>`) + `</td>`;
+    }
+    h += '</tr>';
+  }
+  h += `</table></div><div class="row" style="margin-top:.6rem"><button class="pri" id="tbchk">${QT('check')}</button><button id="tbnew">${QT('newTable')}</button><span id="tbsc" class="mut"></span></div>
+    <p class="small mut">${QT('tblNote')}</p>`;
+  box.innerHTML = h;
+  $('#tbsel').onchange = e => runTable(e.target.value);
+  $('#tbnew').onclick = () => runTable($('#tbsel').value);
+  $('#tbchk').onclick = () => {
+    let ok = 0, n = 0;
+    box.querySelectorAll('td[data-k]').forEach(td => {
+      const k = td.dataset.k, v = (td.querySelector('.tbin').value || '').trim().replace(/[韻部]$/, '');
+      const good = Object.keys(tb[k].ans);
+      const hit = v && v.split(/[・,，、\s]+/).filter(Boolean).every(x => good.includes(x));
+      n++; if (hit) ok++;
+      td.title = tip(k);
+      td.style.background = hit ? 'color-mix(in srgb, var(--ok) 18%, transparent)' : 'color-mix(in srgb, var(--ng) 18%, transparent)';
+      if (!td.querySelector('.ans')) td.insertAdjacentHTML('beforeend', `<div class="ans small han">${good.join('・')}</div>`);
+    });
+    $('#tbsc').textContent = QT('tblScore')(ok, n);
+    QS.total += n; QS.right += ok;
+  };
 }

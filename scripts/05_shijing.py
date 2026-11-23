@@ -181,3 +181,49 @@ dump('wangbu.json', {'chars': out_wb, 'stats': stats})
 print(stats['chars'], stats['groups'], stats['labelled'], 'unresolved', unresolved, stats['agree'])
 print(stats['mix'][:15])
 print(stats['conf']['bs'][:15])
+
+# ---- 表うめ用：王力の韻部 × 開合・等 → 中古韻系 ----
+# 字の選び方：讀音が一つで，王力『詩經韻讀』の韻部と本站推得（白—沙または鄭張）の韻部が一致する字だけ
+yun206 = json.load(open('docs/data/yun206.json', encoding='utf8'))
+xyj = json.load(open('docs/data/xiaoyun.json', encoding='utf8'))
+XYF = xyj['fields']
+XYD = {r[0]: dict(zip(XYF, r)) for r in xyj['rows']}
+MU2 = {}
+for y in yun206:
+    for t in '平上去入':
+        if y[t]:
+            MU2[y[t]] = y['平'] or y['去']
+MU2.update({'襇': MU2['襉'], '号': MU2['號']})
+grid = collections.defaultdict(lambda: collections.defaultdict(lambda: collections.defaultdict(list)))
+for ch, e in wb.items():
+    v = chars.get(ch)
+    if not v:
+        continue
+    rd = [r for r in v['r'] if r.get('x')]
+    if len(rd) != 1 or len(e['bu']) != 1:
+        continue
+    wang = next(iter(e['bu']))
+    w2 = {'盍': '葉'}.get(wang, wang)
+    ours = {it[1] for it in rd[0]['b'] + rd[0]['z'] if it[1]}
+    if not (w2 in ours or (w2 == '侵' and '冬' in ours)):
+        continue
+    o = XYD[rd[0]['x']]
+    if not o.get('等'):
+        continue
+    hu = o.get('呼') or '脣'
+    grid[wang][hu + o['等']][MU2.get(o['韻目'], o['韻目'])].append(ch)
+tables = {}
+for bu, cells in grid.items():
+    t = {}
+    for k, d in cells.items():
+        tot = sum(len(v) for v in d.values())
+        # 2字以上ある韻系だけを正解として認める（1字だけの例外は除く）
+        ok = {y: v[:6] for y, v in sorted(d.items(), key=lambda x: -len(x[1])) if len(v) >= 2}
+        if ok:
+            t[k] = {'ans': ok, 'cnt': {y: len(d[y]) for y in ok}, 'n': tot}
+    if t:
+        tables[bu] = t
+wbj = json.load(open('docs/data/wangbu.json', encoding='utf8'))
+wbj['tables'] = tables
+json.dump(wbj, open('docs/data/wangbu.json', 'w', encoding='utf8'), ensure_ascii=False, separators=(',', ':'))
+print('tables', len(tables), sum(len(t) for t in tables.values()))

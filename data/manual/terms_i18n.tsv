@@ -1,0 +1,134 @@
+# 術語說明の日本語・英語版。欄: 術語	日本語	English（術語・拼音は terms.tsv）
+音韻學	漢語の各時代の音韻体系とその変化を研究する学問。伝統的な小学の一分野。	The study of the sound systems of Chinese in each period and how they changed; a branch of traditional philology.
+上古音	『詩経』の押韻や諧声字などを主な根拠とする，先秦・両漢の漢語の音。	Pre-Qin and Han Chinese pronunciation, reconstructed mainly from Shijing rhymes and phonetic series.
+中古音	切韻系の韻書と初期の韻図に代表される，隋唐の漢語の音。	Sui–Tang Chinese as recorded in the Qieyun family of rhyme dictionaries and the early rhyme tables.
+近代音	『中原音韻』などに代表される，元明清の漢語の音。	Yuan–Qing Chinese, represented by works such as the Zhongyuan yinyun.
+古音學	上古音を専門に研究する学問。	The study of Old Chinese phonology.
+今音學	切韻の音韻体系を研究する学問。	The study of the Qieyun sound system.
+等韻學	韻図を研究し，字音の構造を分析する学問。	The study of rhyme tables and of syllable structure.
+擬音	古い時代の発音を推定した形。ふつうアステリスク * を付ける。	A reconstructed pronunciation, usually marked with an asterisk *.
+構擬	比較方法や内的再建などによって古い音形を推定すること。	Inferring earlier sound forms by the comparative method, internal reconstruction and similar methods.
+切韻	隋の陸法言らが601年に編んだ韻書。中古音研究の基礎となる。	Rhyme dictionary compiled by Lu Fayan and others in 601; the foundation of Middle Chinese studies.
+廣韻	宋の陳彭年らが1008年に重修した『大宋重修広韻』。206韻に分かれる。	The Da Song chongxiu Guangyun, revised by Chen Pengnian and others in 1008; it has 206 rhymes.
+集韻	宋の丁度らが1039年に編んだ韻書。『広韻』より収録字が多い。	Rhyme dictionary compiled by Ding Du and others in 1039, with more characters than the Guangyun.
+韻鏡	現存最古の韻図の一つ。43転からなる。	One of the oldest surviving rhyme tables, in 43 charts.
+七音略	鄭樵の『通志』に収められた韻図。43転からなる。	The rhyme tables in Zheng Qiao's Tongzhi, in 43 charts.
+切韻指掌圖	宋代の韻図。20図からなる。	A Song-dynasty set of rhyme tables in 20 charts.
+經典釋文	陸徳明の著作。大量の反切による注音を含み，中古音の重要な資料となる。	Lu Deming's glosses on the classics; its many fanqie spellings make it a key Middle Chinese source.
+說文解字	許慎の字書。そこに示された形声字の構造が，諧声分析の基礎になる。	Xu Shen's dictionary; its analysis of phono-semantic characters underlies the study of phonetic series.
+詩經	先秦の詩歌集。その押韻が上古の韻部の主な根拠となる。	The pre-Qin anthology of poems; its rhymes are the main evidence for Old Chinese rhyme groups.
+聲母	音節の頭の子音。	The consonant at the start of a syllable.
+韻母	音節のうち声母より後の部分。介音・主母音・韻尾からなる。	The part of a syllable after the initial: medial, main vowel and coda.
+聲調	意味の区別に関わる音の高さの変化。	Pitch distinctions that keep words apart.
+聲紐	声母の伝統的な呼び名。紐ともいう。	Traditional name for the initial, also called niǔ.
+字母	代表字で声母を表したもの。三十六字母など。	Representative characters used to name initials, as in the 36 initials.
+三十六字母	唐宋時代の，36の代表字で表した声母の体系。	The Tang–Song system naming the initials with 36 representative characters.
+守溫字母	唐末の僧守温が定めたと伝えられる30の字母。	The 30 initials traditionally attributed to the late-Tang monk Shouwen.
+五音	調音位置によって声母を唇・舌・歯・牙・喉の5類に分けたもの。	The division of initials by place of articulation into labial, lingual, dental, velar and laryngeal.
+七音	五音に半舌と半歯を加えたもの。	The five classes plus the semi-lingual and semi-dental.
+脣音	両唇音の幫滂並明と，唇歯音の非敷奉微。	Labials: the bilabials 幫滂並明 and the labiodentals 非敷奉微.
+重脣音	両唇音の幫滂並明。	The bilabials 幫滂並明.
+輕脣音	唇歯音の非敷奉微。重唇音が三等合口の条件で分化して生じた。	The labiodentals 非敷奉微, which split off from the bilabials before Division-III rounded finals.
+舌音	舌頭音と舌上音。	Tongue initials: the shetou and sheshang series.
+舌頭音	端透定泥。	The dental stops and nasal 端透定泥.
+舌上音	知徹澄孃。	The retroflex stops and nasal 知徹澄孃.
+齒音	歯頭音と正歯音。	Sibilant initials: the chitou and zhengchi series.
+齒頭音	精清從心邪。	The dental affricates and fricatives 精清從心邪.
+正齒音	照穿牀審禪。さらに莊組すなわち照二と，章組すなわち照三に分かれる。	照穿牀審禪, further divided into the Zhuang group (照二) and the Zhang group (照三).
+牙音	見溪羣疑。	The velars 見溪羣疑.
+喉音	影曉匣喻。	The laryngeals 影曉匣喻.
+半舌音	来母。	The initial 來 (l-).
+半齒音	日母。	The initial 日.
+清濁	声帯の振動と気音の有無によって，声母を4類に分けたもの。	The fourfold classification of initials by voicing and aspiration.
+全清	無気の無声破裂音・破擦音と，無声摩擦音。幫端見精心など。	Unaspirated voiceless stops and affricates, and voiceless fricatives: 幫端見精心 and others.
+次清	有気の無声破裂音・破擦音。滂透溪清など。	Aspirated voiceless stops and affricates: 滂透溪清 and others.
+全濁	有声の破裂音・破擦音・摩擦音。並定羣從邪匣など。	Voiced stops, affricates and fricatives: 並定羣從邪匣 and others.
+次濁	鼻音・側面音・半母音などの共鳴音。明泥疑來日以云など。	Sonorants such as nasals, laterals and glides: 明泥疑來日以云 and others.
+介音	声母と主母音のあいだのわたり音。-i- や -u- など。	The glide between initial and main vowel, such as -i- or -u-.
+主元音	韻母の中心となる母音。韻腹ともいう。	The nucleus vowel of the final, also called yùnfù.
+韻腹	主母音のこと。	Another name for the main vowel.
+韻尾	韻母の末尾の子音または母音。	The consonant or vowel that ends the final.
+韻頭	介音のこと。	Another name for the medial.
+陰聲韻	韻尾がないか，母音で終わる韻。	Finals that are open or end in a vowel.
+陽聲韻	鼻音 -m・-n・-ŋ で終わる韻。	Finals ending in a nasal: -m, -n or -ŋ.
+入聲韻	閉鎖音 -p・-t・-k で終わる韻。	Finals ending in a stop: -p, -t or -k.
+陰陽對轉	主母音が同じ陰声韻・陽声韻・入声韻のあいだで起こる交替や通仮。	Alternation or loan use between open, nasal and stop finals that share a main vowel.
+對轉	主母音が同じで，韻尾の類型が異なる韻部どうしの交替。	Alternation between rhyme groups with the same vowel but a different type of coda.
+旁轉	韻尾の類型が同じで，主母音が近い韻部どうしの交替。	Alternation between rhyme groups with the same type of coda and similar vowels.
+通轉	韻部どうしの，比較的遠い通押や交替をまとめた呼び方。	A general term for looser rhyming or alternation between rhyme groups.
+韻	韻書で押韻の単位となるもの。『広韻』は206韻に分ける。	The rhyming unit of a rhyme dictionary; the Guangyun has 206.
+韻目	各韻の代表字。東・董・送・屋など。	The heading character of each rhyme, such as 東, 董, 送, 屋.
+韻部	上古の押韻から帰納した類。之部・魚部など。	A class induced from Old Chinese rhyming, such as 之部 or 魚部.
+韻系	平上去入が相承する一組の韻。東董送屋など。	A set of rhymes matched across the four tones, such as 東董送屋.
+韻類	反切下字を系聯して得られる韻母の類。	Classes of finals found by linking the lower fanqie characters.
+攝	韻図で，韻尾が同じで主母音の近い韻をまとめた大きな類。全部で16摂ある。	In the rhyme tables, a large class of rhymes with the same coda and similar vowels; there are 16.
+十六攝	通江止遇蟹臻山效果假宕梗曾流深咸。	The sixteen shè: 通江止遇蟹臻山效果假宕梗曾流深咸.
+等	韻図で韻母を一等から四等までに分けたもの。	The four divisions, I to IV, into which the rhyme tables sort finals.
+等呼	等と開合をあわせた呼び方。	Division and openness taken together.
+開口	-u- 介音や円唇性をもたない韻母。	Finals without -u- or lip rounding.
+合口	-u- 介音や円唇性をもつ韻母。	Finals with -u- or lip rounding.
+開合	開口と合口。	Open (kāikǒu) versus rounded (hékǒu) finals.
+轉	『韻鏡』『七音略』の韻図の単位。1転が1枚の図にあたる。	The unit of the Yunjing and Qiyinlüe tables; one zhuǎn is one chart.
+內轉	韻図の二等の位置に，独立した韻がない転。	A chart with no independent Division-II rhyme.
+外轉	韻図の二等の位置に，独立した韻がある転。	A chart with an independent Division-II rhyme.
+重紐	支脂祭真仙宵侵鹽などの韻で，唇牙喉音が2類に分かれ，韻図で三等と四等に置かれること。	In rhymes such as 支脂祭真仙宵侵鹽, labial, velar and laryngeal syllables fall into two classes placed in Divisions III and IV.
+重紐三等	B類。韻図では三等に置かれる。	Type B, placed in Division III of the tables.
+重紐四等	A類。韻図では四等に置かれる。	Type A, placed in Division IV of the tables.
+假四等	実際は三等なのに，韻図で四等の位置に置かれる字。精組や以母の三等字など。	Division-III syllables placed in the Division-IV row, such as those with Jing-group or 以 initials.
+假二等	実際は三等なのに，韻図で二等の位置に置かれる莊組の字。	Division-III Zhuang-group syllables placed in the Division-II row.
+平聲	中古の四声の一つ。	One of the four Middle Chinese tones: level.
+上聲	中古の四声の一つ。この上は shǎng と読む。	One of the four tones: rising. Here 上 is read shǎng.
+去聲	中古の四声の一つ。	One of the four tones: departing.
+入聲	中古の四声の一つ。-p・-t・-k で終わる。	One of the four tones: entering, ending in -p, -t or -k.
+四聲	平・上・去・入。	Level, rising, departing and entering.
+四聲相承	同じ韻系の平上去入の各韻が対応しあうこと。	The matching of the level, rising, departing and entering rhymes of one set.
+平仄	平声と，上去入をまとめた仄声との区別。	The contrast between level and oblique (rising, departing, entering) tones.
+反切	二字で一字の音を表す方法。上の字が声母を，下の字が韻母と声調を示す。	Spelling a syllable with two characters: the first gives the initial, the second the final and tone.
+反切上字	反切の一字目。声母を示す。	The first fanqie character, which gives the initial.
+反切下字	反切の二字目。韻母と声調を示す。	The second fanqie character, which gives the final and tone.
+小韻	韻書のなかの同音字のまとまり。首字を代表とし，反切を付ける。	A group of homophones in a rhyme dictionary, headed by one character with a fanqie.
+直音	同音の字によって音を示す方法。	Indicating a reading by citing a homophone.
+讀若	漢代の注音の用語。音の近い字によって示す。	A Han-period gloss, "read like", citing a similar-sounding character.
+系聯法	陳澧が反切上下字の類を帰納するのに用いた方法。	Chen Li's method of linking fanqie characters into classes.
+諧聲	形声字とその声符との音の関係。	The sound relation between a phono-semantic character and its phonetic.
+聲符	形声字のなかで音を表す部分。	The component of a character that indicates its sound.
+諧聲系列	同じ声符をもつ一群の形声字。	The set of characters sharing one phonetic component.
+同源詞	音と意味が関連し，同じ語根から出た語。	Words related in sound and meaning that come from one root.
+通假	音の同じまたは近い字を，本来の字の代わりに用いること。	Writing a word with a homophonous or near-homophonous character instead of its proper one.
+押韻	句末に同じ韻の字を置くこと。	Placing characters of the same rhyme at the ends of lines.
+合韻	異なる韻部の字がときに押韻すること。	Occasional rhyming between different rhyme groups.
+古無輕脣音	銭大昕の説。上古には軽唇音がなく，非敷奉微は幫滂並明のように読まれた。	Qian Daxin's thesis: Old Chinese had no labiodentals, and 非敷奉微 were read like 幫滂並明.
+古無舌上音	銭大昕の説。上古には舌上音がなく，知徹澄は端透定のように読まれた。	Qian Daxin's thesis: Old Chinese had no retroflex stops, and 知徹澄 were read like 端透定.
+娘日歸泥	章炳麟の説。上古の娘母と日母は泥母にさかのぼる。	Zhang Binglin's thesis: 娘 and 日 go back to 泥 in Old Chinese.
+喻三歸匣	曽運乾の説。喩母三等すなわち云母は，上古の匣母にさかのぼる。	Zeng Yunqian's thesis: 喻 of Division III, that is 云, goes back to 匣.
+喻四歸定	曽運乾の説。喩母四等すなわち以母は，上古で定母に近かった。	Zeng Yunqian's thesis: 喻 of Division IV, that is 以, was close to 定 in Old Chinese.
+照二歸精	黄侃の説。莊組は上古の精組にさかのぼる。	Huang Kan's thesis: the Zhuang group goes back to the Jing group.
+照三歸端	章組が上古で端組とよく諧声することから立てられた説。立て方は論者によって異なる。	A thesis based on the frequent phonetic links between the Zhang and Duan groups; formulations differ.
+古無去聲	段玉裁の説。上古には去声がなかった。	Duan Yucai's thesis: Old Chinese had no departing tone.
+古無上去	黄侃の説。上古には平声と入声しかなかった。異論がある。	Huang Kan's thesis: Old Chinese had only the level and entering tones. Disputed.
+同聲必同部	段玉裁の説。同じ声符をもつ字は，上古で必ず同じ韻部に属する。	Duan Yucai's principle: characters with the same phonetic belong to the same rhyme group.
+長入	王力の説。上古の入声には長短があり，長いものはのちに去声になった。	Wang Li's thesis: Old Chinese entering-tone syllables were long or short, and the long ones became departing tone.
+六元音系統	上古に *i・*e・*a・*o・*u・*ə の6母音を立てる説。*ə は *ɯ と書く論者もいる。	The hypothesis of six Old Chinese vowels *i, *e, *a, *o, *u, *ə; some write *ɯ for *ə.
+咽化	白一平・沙加爾は，咽頭化した声母 *Cˤ によって中古の非三等字を説明する。	Baxter and Sagart account for non-Division-III Middle Chinese syllables with pharyngealized initials *Cˤ.
+A型音節	白一平・沙加爾の体系で咽頭化をもつ音節。中古ではおもに一・二・四等になる。	In Baxter–Sagart, a pharyngealized syllable; it mostly becomes Division I, II or IV.
+B型音節	白一平・沙加爾の体系で咽頭化をもたない音節。中古では三等になる。	In Baxter–Sagart, a non-pharyngealized syllable; it becomes Division III.
+長短元音	鄭張尚芳・潘悟雲は，長母音で一・二・四等を，短母音で三等を説明する。	Zhengzhang and Pan derive Divisions I, II and IV from long vowels and Division III from short ones.
+墊介音	鄭張尚芳の体系における -r-・-l-・-j- などの介音。	Medials such as -r-, -l- and -j- in Zhengzhang's system.
+前綴	上古の接頭辞。*s-・*m-・*N-・*k-・*t- など。	Old Chinese prefixes such as *s-, *m-, *N-, *k-, *t-.
+後綴	上古の接尾辞。*-s や *-ʔ など。	Old Chinese suffixes such as *-s and *-ʔ.
+次要音節	白一平・沙加爾の体系で，主音節の前に立つ弱い音節。*Cə. など。	In Baxter–Sagart, a weak syllable before the main syllable, such as *Cə.
+清鼻音	上古の無声共鳴音 *m̥・*n̥・*ŋ̊ など。中古では曉・透などの無声声母になる。	Old Chinese voiceless sonorants such as *m̥, *n̥, *ŋ̊; they become voiceless initials such as 曉 and 透.
+複輔音	上古の声母に立てられる子音連続。*kr-・*pl- など。	Consonant clusters in Old Chinese initials, such as *kr- and *pl-.
+聲調起源	オードリクールの説。上声は *-ʔ から，去声は *-s から生じた。	Haudricourt's thesis: the rising tone arose from *-ʔ and the departing tone from *-s.
+白一平	William H. Baxter。	William H. Baxter.
+沙加爾	Laurent Sagart。	Laurent Sagart.
+鄭張尚芳	『上古音系』の著者。	Author of Shanggu yinxi.
+潘悟雲	上古音の研究者。	A researcher of Old Chinese phonology.
+王力	『漢語史稿』『詩経韻読』の著者。上古三十韻部を立てた。	Author of Hanyu shigao and Shijing yundu; he set up the 30 Old Chinese rhyme groups.
+高本漢	Bernhard Karlgren。	Bernhard Karlgren.
+李方桂	『上古音研究』の著者。	Author of Shanggu yin yanjiu.
+董同龢	『上古音韻表稿』の著者。	Author of Shanggu yinyun biaogao.
+陸法言	『切韻』の編者。	Compiler of the Qieyun.
+陳澧	『切韻考』の著者。系聯法を考案した。	Author of Qieyun kao, who devised the linking method.
+錢大昕	清代の学者。古無軽唇音と古無舌上音を唱えた。	Qing scholar who argued that antiquity had no labiodentals and no retroflex stops.
+段玉裁	『説文解字注』『六書音均表』の著者。	Author of Shuowen jiezi zhu and Liushu yinjun biao.

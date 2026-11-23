@@ -168,10 +168,13 @@ for m in MU:
     os_ = [o for o in xy if o.get('母') == m]
     o0 = os_[0] if os_ else {}
     mu_info.append({'母': m, 'py': PY.get(m), '組': o0.get('組'), '音': o0.get('音'), '清濁': o0.get('清濁'),
-                    '字母': o0.get('字母'), 'n': len(os_),
+                    '字母': '/'.join(k for k, _ in collections.Counter(o.get('字母') for o in os_ if o.get('字母')).most_common()), 'n': len(os_),
                     'oc': sorted(([k, v['n'], v['ex']] for k, v in ini_corr[m].items()), key=lambda x: -x[1])[:10]})
 
+TI = {r[0]: r for r in tsv('data/manual/terms_i18n.tsv')}
 terms = [dict(zip(['t', 'py', 'cat', 'def'], r)) for r in tsv('data/manual/terms.tsv')]
+for t in terms:
+    t['def_ja'], t['def_en'] = TI[t['t']][1], TI[t['t']][2]
 
 dump = lambda n, o: json.dump(o, open(OUT + n, 'w', encoding='utf8'), ensure_ascii=False, separators=(',', ':'))
 dump('xiaoyun.json', {'fields': FIELDS + ['字'], 'rows': xy_c})

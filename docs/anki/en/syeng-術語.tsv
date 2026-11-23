@@ -1,0 +1,135 @@
+#separator:tab
+#html:true
+<div class=big style='font-size:40px'>音韻學</div><div class=mut>General</div>	<div class=rom>yīnyùnxué</div><div>The study of the sound systems of Chinese in each period and how they changed; a branch of traditional philology.</div>
+<div class=big style='font-size:40px'>上古音</div><div class=mut>General</div>	<div class=rom>shànggǔyīn</div><div>Pre-Qin and Han Chinese pronunciation, reconstructed mainly from Shijing rhymes and phonetic series.</div>
+<div class=big style='font-size:40px'>中古音</div><div class=mut>General</div>	<div class=rom>zhōnggǔyīn</div><div>Sui–Tang Chinese as recorded in the Qieyun family of rhyme dictionaries and the early rhyme tables.</div>
+<div class=big style='font-size:40px'>近代音</div><div class=mut>General</div>	<div class=rom>jìndàiyīn</div><div>Yuan–Qing Chinese, represented by works such as the Zhongyuan yinyun.</div>
+<div class=big style='font-size:40px'>古音學</div><div class=mut>General</div>	<div class=rom>gǔyīnxué</div><div>The study of Old Chinese phonology.</div>
+<div class=big style='font-size:40px'>今音學</div><div class=mut>General</div>	<div class=rom>jīnyīnxué</div><div>The study of the Qieyun sound system.</div>
+<div class=big style='font-size:40px'>等韻學</div><div class=mut>General</div>	<div class=rom>děngyùnxué</div><div>The study of rhyme tables and of syllable structure.</div>
+<div class=big style='font-size:40px'>擬音</div><div class=mut>General</div>	<div class=rom>nǐyīn</div><div>A reconstructed pronunciation, usually marked with an asterisk *.</div>
+<div class=big style='font-size:40px'>構擬</div><div class=mut>General</div>	<div class=rom>gòunǐ</div><div>Inferring earlier sound forms by the comparative method, internal reconstruction and similar methods.</div>
+<div class=big style='font-size:40px'>切韻</div><div class=mut>Sources</div>	<div class=rom>Qièyùn</div><div>Rhyme dictionary compiled by Lu Fayan and others in 601; the foundation of Middle Chinese studies.</div>
+<div class=big style='font-size:40px'>廣韻</div><div class=mut>Sources</div>	<div class=rom>Guǎngyùn</div><div>The Da Song chongxiu Guangyun, revised by Chen Pengnian and others in 1008; it has 206 rhymes.</div>
+<div class=big style='font-size:40px'>集韻</div><div class=mut>Sources</div>	<div class=rom>Jíyùn</div><div>Rhyme dictionary compiled by Ding Du and others in 1039, with more characters than the Guangyun.</div>
+<div class=big style='font-size:40px'>韻鏡</div><div class=mut>Sources</div>	<div class=rom>Yùnjìng</div><div>One of the oldest surviving rhyme tables, in 43 charts.</div>
+<div class=big style='font-size:40px'>七音略</div><div class=mut>Sources</div>	<div class=rom>Qīyīnlüè</div><div>The rhyme tables in Zheng Qiao&#x27;s Tongzhi, in 43 charts.</div>
+<div class=big style='font-size:40px'>切韻指掌圖</div><div class=mut>Sources</div>	<div class=rom>Qièyùn Zhǐzhǎngtú</div><div>A Song-dynasty set of rhyme tables in 20 charts.</div>
+<div class=big style='font-size:40px'>經典釋文</div><div class=mut>Sources</div>	<div class=rom>Jīngdiǎn Shìwén</div><div>Lu Deming&#x27;s glosses on the classics; its many fanqie spellings make it a key Middle Chinese source.</div>
+<div class=big style='font-size:40px'>說文解字</div><div class=mut>Sources</div>	<div class=rom>Shuōwén Jiězì</div><div>Xu Shen&#x27;s dictionary; its analysis of phono-semantic characters underlies the study of phonetic series.</div>
+<div class=big style='font-size:40px'>詩經</div><div class=mut>Sources</div>	<div class=rom>Shījīng</div><div>The pre-Qin anthology of poems; its rhymes are the main evidence for Old Chinese rhyme groups.</div>
+<div class=big style='font-size:40px'>聲母</div><div class=mut>Initials</div>	<div class=rom>shēngmǔ</div><div>The consonant at the start of a syllable.</div>
+<div class=big style='font-size:40px'>韻母</div><div class=mut>Finals</div>	<div class=rom>yùnmǔ</div><div>The part of a syllable after the initial: medial, main vowel and coda.</div>
+<div class=big style='font-size:40px'>聲調</div><div class=mut>Tones</div>	<div class=rom>shēngdiào</div><div>Pitch distinctions that keep words apart.</div>
+<div class=big style='font-size:40px'>聲紐</div><div class=mut>Initials</div>	<div class=rom>shēngniǔ</div><div>Traditional name for the initial, also called niǔ.</div>
+<div class=big style='font-size:40px'>字母</div><div class=mut>Initials</div>	<div class=rom>zìmǔ</div><div>Representative characters used to name initials, as in the 36 initials.</div>
+<div class=big style='font-size:40px'>三十六字母</div><div class=mut>Initials</div>	<div class=rom>sānshíliù zìmǔ</div><div>The Tang–Song system naming the initials with 36 representative characters.</div>
+<div class=big style='font-size:40px'>守溫字母</div><div class=mut>Initials</div>	<div class=rom>Shǒuwēn zìmǔ</div><div>The 30 initials traditionally attributed to the late-Tang monk Shouwen.</div>
+<div class=big style='font-size:40px'>五音</div><div class=mut>Initials</div>	<div class=rom>wǔyīn</div><div>The division of initials by place of articulation into labial, lingual, dental, velar and laryngeal.</div>
+<div class=big style='font-size:40px'>七音</div><div class=mut>Initials</div>	<div class=rom>qīyīn</div><div>The five classes plus the semi-lingual and semi-dental.</div>
+<div class=big style='font-size:40px'>脣音</div><div class=mut>Initials</div>	<div class=rom>chúnyīn</div><div>Labials: the bilabials 幫滂並明 and the labiodentals 非敷奉微.</div>
+<div class=big style='font-size:40px'>重脣音</div><div class=mut>Initials</div>	<div class=rom>zhòngchúnyīn</div><div>The bilabials 幫滂並明.</div>
+<div class=big style='font-size:40px'>輕脣音</div><div class=mut>Initials</div>	<div class=rom>qīngchúnyīn</div><div>The labiodentals 非敷奉微, which split off from the bilabials before Division-III rounded finals.</div>
+<div class=big style='font-size:40px'>舌音</div><div class=mut>Initials</div>	<div class=rom>shéyīn</div><div>Tongue initials: the shetou and sheshang series.</div>
+<div class=big style='font-size:40px'>舌頭音</div><div class=mut>Initials</div>	<div class=rom>shétóuyīn</div><div>The dental stops and nasal 端透定泥.</div>
+<div class=big style='font-size:40px'>舌上音</div><div class=mut>Initials</div>	<div class=rom>shéshàngyīn</div><div>The retroflex stops and nasal 知徹澄孃.</div>
+<div class=big style='font-size:40px'>齒音</div><div class=mut>Initials</div>	<div class=rom>chǐyīn</div><div>Sibilant initials: the chitou and zhengchi series.</div>
+<div class=big style='font-size:40px'>齒頭音</div><div class=mut>Initials</div>	<div class=rom>chǐtóuyīn</div><div>The dental affricates and fricatives 精清從心邪.</div>
+<div class=big style='font-size:40px'>正齒音</div><div class=mut>Initials</div>	<div class=rom>zhèngchǐyīn</div><div>照穿牀審禪, further divided into the Zhuang group (照二) and the Zhang group (照三).</div>
+<div class=big style='font-size:40px'>牙音</div><div class=mut>Initials</div>	<div class=rom>yáyīn</div><div>The velars 見溪羣疑.</div>
+<div class=big style='font-size:40px'>喉音</div><div class=mut>Initials</div>	<div class=rom>hóuyīn</div><div>The laryngeals 影曉匣喻.</div>
+<div class=big style='font-size:40px'>半舌音</div><div class=mut>Initials</div>	<div class=rom>bànshéyīn</div><div>The initial 來 (l-).</div>
+<div class=big style='font-size:40px'>半齒音</div><div class=mut>Initials</div>	<div class=rom>bànchǐyīn</div><div>The initial 日.</div>
+<div class=big style='font-size:40px'>清濁</div><div class=mut>Initials</div>	<div class=rom>qīngzhuó</div><div>The fourfold classification of initials by voicing and aspiration.</div>
+<div class=big style='font-size:40px'>全清</div><div class=mut>Initials</div>	<div class=rom>quánqīng</div><div>Unaspirated voiceless stops and affricates, and voiceless fricatives: 幫端見精心 and others.</div>
+<div class=big style='font-size:40px'>次清</div><div class=mut>Initials</div>	<div class=rom>cìqīng</div><div>Aspirated voiceless stops and affricates: 滂透溪清 and others.</div>
+<div class=big style='font-size:40px'>全濁</div><div class=mut>Initials</div>	<div class=rom>quánzhuó</div><div>Voiced stops, affricates and fricatives: 並定羣從邪匣 and others.</div>
+<div class=big style='font-size:40px'>次濁</div><div class=mut>Initials</div>	<div class=rom>cìzhuó</div><div>Sonorants such as nasals, laterals and glides: 明泥疑來日以云 and others.</div>
+<div class=big style='font-size:40px'>介音</div><div class=mut>Finals</div>	<div class=rom>jièyīn</div><div>The glide between initial and main vowel, such as -i- or -u-.</div>
+<div class=big style='font-size:40px'>主元音</div><div class=mut>Finals</div>	<div class=rom>zhǔyuányīn</div><div>The nucleus vowel of the final, also called yùnfù.</div>
+<div class=big style='font-size:40px'>韻腹</div><div class=mut>Finals</div>	<div class=rom>yùnfù</div><div>Another name for the main vowel.</div>
+<div class=big style='font-size:40px'>韻尾</div><div class=mut>Finals</div>	<div class=rom>yùnwěi</div><div>The consonant or vowel that ends the final.</div>
+<div class=big style='font-size:40px'>韻頭</div><div class=mut>Finals</div>	<div class=rom>yùntóu</div><div>Another name for the medial.</div>
+<div class=big style='font-size:40px'>陰聲韻</div><div class=mut>Finals</div>	<div class=rom>yīnshēngyùn</div><div>Finals that are open or end in a vowel.</div>
+<div class=big style='font-size:40px'>陽聲韻</div><div class=mut>Finals</div>	<div class=rom>yángshēngyùn</div><div>Finals ending in a nasal: -m, -n or -ŋ.</div>
+<div class=big style='font-size:40px'>入聲韻</div><div class=mut>Finals</div>	<div class=rom>rùshēngyùn</div><div>Finals ending in a stop: -p, -t or -k.</div>
+<div class=big style='font-size:40px'>陰陽對轉</div><div class=mut>Finals</div>	<div class=rom>yīnyáng duìzhuǎn</div><div>Alternation or loan use between open, nasal and stop finals that share a main vowel.</div>
+<div class=big style='font-size:40px'>對轉</div><div class=mut>Finals</div>	<div class=rom>duìzhuǎn</div><div>Alternation between rhyme groups with the same vowel but a different type of coda.</div>
+<div class=big style='font-size:40px'>旁轉</div><div class=mut>Finals</div>	<div class=rom>pángzhuǎn</div><div>Alternation between rhyme groups with the same type of coda and similar vowels.</div>
+<div class=big style='font-size:40px'>通轉</div><div class=mut>Finals</div>	<div class=rom>tōngzhuǎn</div><div>A general term for looser rhyming or alternation between rhyme groups.</div>
+<div class=big style='font-size:40px'>韻</div><div class=mut>Finals</div>	<div class=rom>yùn</div><div>The rhyming unit of a rhyme dictionary; the Guangyun has 206.</div>
+<div class=big style='font-size:40px'>韻目</div><div class=mut>Finals</div>	<div class=rom>yùnmù</div><div>The heading character of each rhyme, such as 東, 董, 送, 屋.</div>
+<div class=big style='font-size:40px'>韻部</div><div class=mut>Finals</div>	<div class=rom>yùnbù</div><div>A class induced from Old Chinese rhyming, such as 之部 or 魚部.</div>
+<div class=big style='font-size:40px'>韻系</div><div class=mut>Finals</div>	<div class=rom>yùnxì</div><div>A set of rhymes matched across the four tones, such as 東董送屋.</div>
+<div class=big style='font-size:40px'>韻類</div><div class=mut>Finals</div>	<div class=rom>yùnlèi</div><div>Classes of finals found by linking the lower fanqie characters.</div>
+<div class=big style='font-size:40px'>攝</div><div class=mut>Rhyme tables</div>	<div class=rom>shè</div><div>In the rhyme tables, a large class of rhymes with the same coda and similar vowels; there are 16.</div>
+<div class=big style='font-size:40px'>十六攝</div><div class=mut>Rhyme tables</div>	<div class=rom>shíliù shè</div><div>The sixteen shè: 通江止遇蟹臻山效果假宕梗曾流深咸.</div>
+<div class=big style='font-size:40px'>等</div><div class=mut>Rhyme tables</div>	<div class=rom>děng</div><div>The four divisions, I to IV, into which the rhyme tables sort finals.</div>
+<div class=big style='font-size:40px'>等呼</div><div class=mut>Rhyme tables</div>	<div class=rom>děnghū</div><div>Division and openness taken together.</div>
+<div class=big style='font-size:40px'>開口</div><div class=mut>Rhyme tables</div>	<div class=rom>kāikǒu</div><div>Finals without -u- or lip rounding.</div>
+<div class=big style='font-size:40px'>合口</div><div class=mut>Rhyme tables</div>	<div class=rom>hékǒu</div><div>Finals with -u- or lip rounding.</div>
+<div class=big style='font-size:40px'>開合</div><div class=mut>Rhyme tables</div>	<div class=rom>kāihé</div><div>Open (kāikǒu) versus rounded (hékǒu) finals.</div>
+<div class=big style='font-size:40px'>轉</div><div class=mut>Rhyme tables</div>	<div class=rom>zhuǎn</div><div>The unit of the Yunjing and Qiyinlüe tables; one zhuǎn is one chart.</div>
+<div class=big style='font-size:40px'>內轉</div><div class=mut>Rhyme tables</div>	<div class=rom>nèizhuǎn</div><div>A chart with no independent Division-II rhyme.</div>
+<div class=big style='font-size:40px'>外轉</div><div class=mut>Rhyme tables</div>	<div class=rom>wàizhuǎn</div><div>A chart with an independent Division-II rhyme.</div>
+<div class=big style='font-size:40px'>重紐</div><div class=mut>Rhyme tables</div>	<div class=rom>chóngniǔ</div><div>In rhymes such as 支脂祭真仙宵侵鹽, labial, velar and laryngeal syllables fall into two classes placed in Divisions III and IV.</div>
+<div class=big style='font-size:40px'>重紐三等</div><div class=mut>Rhyme tables</div>	<div class=rom>chóngniǔ sānděng</div><div>Type B, placed in Division III of the tables.</div>
+<div class=big style='font-size:40px'>重紐四等</div><div class=mut>Rhyme tables</div>	<div class=rom>chóngniǔ sìděng</div><div>Type A, placed in Division IV of the tables.</div>
+<div class=big style='font-size:40px'>假四等</div><div class=mut>Rhyme tables</div>	<div class=rom>jiǎ sìděng</div><div>Division-III syllables placed in the Division-IV row, such as those with Jing-group or 以 initials.</div>
+<div class=big style='font-size:40px'>假二等</div><div class=mut>Rhyme tables</div>	<div class=rom>jiǎ èrděng</div><div>Division-III Zhuang-group syllables placed in the Division-II row.</div>
+<div class=big style='font-size:40px'>平聲</div><div class=mut>Tones</div>	<div class=rom>píngshēng</div><div>One of the four Middle Chinese tones: level.</div>
+<div class=big style='font-size:40px'>上聲</div><div class=mut>Tones</div>	<div class=rom>shǎngshēng</div><div>One of the four tones: rising. Here 上 is read shǎng.</div>
+<div class=big style='font-size:40px'>去聲</div><div class=mut>Tones</div>	<div class=rom>qùshēng</div><div>One of the four tones: departing.</div>
+<div class=big style='font-size:40px'>入聲</div><div class=mut>Tones</div>	<div class=rom>rùshēng</div><div>One of the four tones: entering, ending in -p, -t or -k.</div>
+<div class=big style='font-size:40px'>四聲</div><div class=mut>Tones</div>	<div class=rom>sìshēng</div><div>Level, rising, departing and entering.</div>
+<div class=big style='font-size:40px'>四聲相承</div><div class=mut>Tones</div>	<div class=rom>sìshēng xiāngchéng</div><div>The matching of the level, rising, departing and entering rhymes of one set.</div>
+<div class=big style='font-size:40px'>平仄</div><div class=mut>Tones</div>	<div class=rom>píngzè</div><div>The contrast between level and oblique (rising, departing, entering) tones.</div>
+<div class=big style='font-size:40px'>反切</div><div class=mut>Notation</div>	<div class=rom>fǎnqiè</div><div>Spelling a syllable with two characters: the first gives the initial, the second the final and tone.</div>
+<div class=big style='font-size:40px'>反切上字</div><div class=mut>Notation</div>	<div class=rom>fǎnqiè shàngzì</div><div>The first fanqie character, which gives the initial.</div>
+<div class=big style='font-size:40px'>反切下字</div><div class=mut>Notation</div>	<div class=rom>fǎnqiè xiàzì</div><div>The second fanqie character, which gives the final and tone.</div>
+<div class=big style='font-size:40px'>小韻</div><div class=mut>Notation</div>	<div class=rom>xiǎoyùn</div><div>A group of homophones in a rhyme dictionary, headed by one character with a fanqie.</div>
+<div class=big style='font-size:40px'>直音</div><div class=mut>Notation</div>	<div class=rom>zhíyīn</div><div>Indicating a reading by citing a homophone.</div>
+<div class=big style='font-size:40px'>讀若</div><div class=mut>Notation</div>	<div class=rom>dúruò</div><div>A Han-period gloss, &quot;read like&quot;, citing a similar-sounding character.</div>
+<div class=big style='font-size:40px'>系聯法</div><div class=mut>Methods</div>	<div class=rom>xìliánfǎ</div><div>Chen Li&#x27;s method of linking fanqie characters into classes.</div>
+<div class=big style='font-size:40px'>諧聲</div><div class=mut>Methods</div>	<div class=rom>xiéshēng</div><div>The sound relation between a phono-semantic character and its phonetic.</div>
+<div class=big style='font-size:40px'>聲符</div><div class=mut>Methods</div>	<div class=rom>shēngfú</div><div>The component of a character that indicates its sound.</div>
+<div class=big style='font-size:40px'>諧聲系列</div><div class=mut>Methods</div>	<div class=rom>xiéshēng xìliè</div><div>The set of characters sharing one phonetic component.</div>
+<div class=big style='font-size:40px'>同源詞</div><div class=mut>Methods</div>	<div class=rom>tóngyuáncí</div><div>Words related in sound and meaning that come from one root.</div>
+<div class=big style='font-size:40px'>通假</div><div class=mut>Methods</div>	<div class=rom>tōngjiǎ</div><div>Writing a word with a homophonous or near-homophonous character instead of its proper one.</div>
+<div class=big style='font-size:40px'>押韻</div><div class=mut>Methods</div>	<div class=rom>yāyùn</div><div>Placing characters of the same rhyme at the ends of lines.</div>
+<div class=big style='font-size:40px'>合韻</div><div class=mut>Methods</div>	<div class=rom>héyùn</div><div>Occasional rhyming between different rhyme groups.</div>
+<div class=big style='font-size:40px'>古無輕脣音</div><div class=mut>Theses</div>	<div class=rom>gǔ wú qīngchúnyīn</div><div>Qian Daxin&#x27;s thesis: Old Chinese had no labiodentals, and 非敷奉微 were read like 幫滂並明.</div>
+<div class=big style='font-size:40px'>古無舌上音</div><div class=mut>Theses</div>	<div class=rom>gǔ wú shéshàngyīn</div><div>Qian Daxin&#x27;s thesis: Old Chinese had no retroflex stops, and 知徹澄 were read like 端透定.</div>
+<div class=big style='font-size:40px'>娘日歸泥</div><div class=mut>Theses</div>	<div class=rom>niáng rì guī ní</div><div>Zhang Binglin&#x27;s thesis: 娘 and 日 go back to 泥 in Old Chinese.</div>
+<div class=big style='font-size:40px'>喻三歸匣</div><div class=mut>Theses</div>	<div class=rom>yù sān guī xiá</div><div>Zeng Yunqian&#x27;s thesis: 喻 of Division III, that is 云, goes back to 匣.</div>
+<div class=big style='font-size:40px'>喻四歸定</div><div class=mut>Theses</div>	<div class=rom>yù sì guī dìng</div><div>Zeng Yunqian&#x27;s thesis: 喻 of Division IV, that is 以, was close to 定 in Old Chinese.</div>
+<div class=big style='font-size:40px'>照二歸精</div><div class=mut>Theses</div>	<div class=rom>zhào èr guī jīng</div><div>Huang Kan&#x27;s thesis: the Zhuang group goes back to the Jing group.</div>
+<div class=big style='font-size:40px'>照三歸端</div><div class=mut>Theses</div>	<div class=rom>zhào sān guī duān</div><div>A thesis based on the frequent phonetic links between the Zhang and Duan groups; formulations differ.</div>
+<div class=big style='font-size:40px'>古無去聲</div><div class=mut>Theses</div>	<div class=rom>gǔ wú qùshēng</div><div>Duan Yucai&#x27;s thesis: Old Chinese had no departing tone.</div>
+<div class=big style='font-size:40px'>古無上去</div><div class=mut>Theses</div>	<div class=rom>gǔ wú shǎng qù</div><div>Huang Kan&#x27;s thesis: Old Chinese had only the level and entering tones. Disputed.</div>
+<div class=big style='font-size:40px'>同聲必同部</div><div class=mut>Theses</div>	<div class=rom>tóng shēng bì tóng bù</div><div>Duan Yucai&#x27;s principle: characters with the same phonetic belong to the same rhyme group.</div>
+<div class=big style='font-size:40px'>長入</div><div class=mut>Theses</div>	<div class=rom>chángrù</div><div>Wang Li&#x27;s thesis: Old Chinese entering-tone syllables were long or short, and the long ones became departing tone.</div>
+<div class=big style='font-size:40px'>六元音系統</div><div class=mut>Theses</div>	<div class=rom>liù yuányīn xìtǒng</div><div>The hypothesis of six Old Chinese vowels *i, *e, *a, *o, *u, *ə; some write *ɯ for *ə.</div>
+<div class=big style='font-size:40px'>咽化</div><div class=mut>Theses</div>	<div class=rom>yānhuà</div><div>Baxter and Sagart account for non-Division-III Middle Chinese syllables with pharyngealized initials *Cˤ.</div>
+<div class=big style='font-size:40px'>A型音節</div><div class=mut>Theses</div>	<div class=rom>A xíng yīnjié</div><div>In Baxter–Sagart, a pharyngealized syllable; it mostly becomes Division I, II or IV.</div>
+<div class=big style='font-size:40px'>B型音節</div><div class=mut>Theses</div>	<div class=rom>B xíng yīnjié</div><div>In Baxter–Sagart, a non-pharyngealized syllable; it becomes Division III.</div>
+<div class=big style='font-size:40px'>長短元音</div><div class=mut>Theses</div>	<div class=rom>chángduǎn yuányīn</div><div>Zhengzhang and Pan derive Divisions I, II and IV from long vowels and Division III from short ones.</div>
+<div class=big style='font-size:40px'>墊介音</div><div class=mut>Theses</div>	<div class=rom>diànjièyīn</div><div>Medials such as -r-, -l- and -j- in Zhengzhang&#x27;s system.</div>
+<div class=big style='font-size:40px'>前綴</div><div class=mut>Theses</div>	<div class=rom>qiánzhuì</div><div>Old Chinese prefixes such as *s-, *m-, *N-, *k-, *t-.</div>
+<div class=big style='font-size:40px'>後綴</div><div class=mut>Theses</div>	<div class=rom>hòuzhuì</div><div>Old Chinese suffixes such as *-s and *-ʔ.</div>
+<div class=big style='font-size:40px'>次要音節</div><div class=mut>Theses</div>	<div class=rom>cìyào yīnjié</div><div>In Baxter–Sagart, a weak syllable before the main syllable, such as *Cə.</div>
+<div class=big style='font-size:40px'>清鼻音</div><div class=mut>Theses</div>	<div class=rom>qīngbíyīn</div><div>Old Chinese voiceless sonorants such as *m̥, *n̥, *ŋ̊; they become voiceless initials such as 曉 and 透.</div>
+<div class=big style='font-size:40px'>複輔音</div><div class=mut>Theses</div>	<div class=rom>fùfǔyīn</div><div>Consonant clusters in Old Chinese initials, such as *kr- and *pl-.</div>
+<div class=big style='font-size:40px'>聲調起源</div><div class=mut>Theses</div>	<div class=rom>shēngdiào qǐyuán</div><div>Haudricourt&#x27;s thesis: the rising tone arose from *-ʔ and the departing tone from *-s.</div>
+<div class=big style='font-size:40px'>白一平</div><div class=mut>Scholars</div>	<div class=rom>Bái Yīpíng</div><div>William H. Baxter.</div>
+<div class=big style='font-size:40px'>沙加爾</div><div class=mut>Scholars</div>	<div class=rom>Shā Jiā&#x27;ěr</div><div>Laurent Sagart.</div>
+<div class=big style='font-size:40px'>鄭張尚芳</div><div class=mut>Scholars</div>	<div class=rom>Zhèngzhāng Shàngfāng</div><div>Author of Shanggu yinxi.</div>
+<div class=big style='font-size:40px'>潘悟雲</div><div class=mut>Scholars</div>	<div class=rom>Pān Wùyún</div><div>A researcher of Old Chinese phonology.</div>
+<div class=big style='font-size:40px'>王力</div><div class=mut>Scholars</div>	<div class=rom>Wáng Lì</div><div>Author of Hanyu shigao and Shijing yundu; he set up the 30 Old Chinese rhyme groups.</div>
+<div class=big style='font-size:40px'>高本漢</div><div class=mut>Scholars</div>	<div class=rom>Gāo Běnhàn</div><div>Bernhard Karlgren.</div>
+<div class=big style='font-size:40px'>李方桂</div><div class=mut>Scholars</div>	<div class=rom>Lǐ Fāngguì</div><div>Author of Shanggu yin yanjiu.</div>
+<div class=big style='font-size:40px'>董同龢</div><div class=mut>Scholars</div>	<div class=rom>Dǒng Tónghé</div><div>Author of Shanggu yinyun biaogao.</div>
+<div class=big style='font-size:40px'>陸法言</div><div class=mut>Scholars</div>	<div class=rom>Lù Fǎyán</div><div>Compiler of the Qieyun.</div>
+<div class=big style='font-size:40px'>陳澧</div><div class=mut>Scholars</div>	<div class=rom>Chén Lǐ</div><div>Author of Qieyun kao, who devised the linking method.</div>
+<div class=big style='font-size:40px'>錢大昕</div><div class=mut>Scholars</div>	<div class=rom>Qián Dàxīn</div><div>Qing scholar who argued that antiquity had no labiodentals and no retroflex stops.</div>
+<div class=big style='font-size:40px'>段玉裁</div><div class=mut>Scholars</div>	<div class=rom>Duàn Yùcái</div><div>Author of Shuowen jiezi zhu and Liushu yinjun biao.</div>

@@ -4,6 +4,8 @@
 
 網站：<https://anti-tail.github.io/syeng/>（GitHub Pages，`docs/`）
 
+介面有中文、日本語、English 三種（右上切換，或在網址加 `?lang=ja`／`?lang=en`）。學習對象（韻目、聲母名、術語、音韻地位等）在各語言版本中都以中文呈現；術語說明有三種語言。
+
 ## 內容
 
 | 頁面 | 內容 |
@@ -20,7 +22,7 @@
 | 書籤 | 收藏、以書籤出題、匯出 Anki TSV |
 | 說明 | 書籤小工具（bookmarklet）、Anki 牌組下載、資料說明 |
 
-Anki 牌組（`docs/anki/`）：韻目 206、聲母 38、術語 133、字·上古中古 3,913、小韻·音韻地位 3,878、詩經韻腳·王力韻部 1,824（GPL-3.0，不含於 syeng-all）。
+Anki 牌組（`docs/anki/`；日本語版 `docs/anki/ja/`、English `docs/anki/en/`，只有說明文字不同）：韻目 206、聲母 38、術語 133、字·上古中古 3,913、小韻·音韻地位 3,878、詩經韻腳·王力韻部 1,824（GPL-3.0，不含於 syeng-all）。
 
 ## 資料與推得部分
 
@@ -49,4 +51,6 @@ npm run serve   # http://localhost:8000
 
 ---
 
-日本語：上古漢語〜中古漢語の学習ツールです。表示は中文（繁體）です。データの出典と、本プロジェクトで推定した部分（多音字の上古・中古対応、韻部の帰属）は上記のとおりです。
+日本語：上古漢語〜中古漢語の学習ツールです。画面は中文・日本語・英語で切り替えられます。学ぶ対象の語は中文のままです。データの出典と、本プロジェクトで推定した部分（多音字の上古・中古対応、韻部の帰属）は上記のとおりです。
+
+English: a study tool for Old and Middle Chinese phonology. The interface is available in Chinese, Japanese and English; headwords stay in Chinese.

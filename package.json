@@ -1,0 +1,24 @@
+{
+  "name": "syeng",
+  "version": "0.1.0",
+  "description": "上古—中古漢語音韻學習工具",
+  "scripts": {
+    "fetch": "bash scripts/00_fetch_wiktionary.sh",
+    "build": "node scripts/01_export_qieyun.mjs && python3 scripts/02_align.py && python3 scripts/03_site_data.py && python3 scripts/04_anki.py",
+    "serve": "python3 -m http.server -d docs 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anti-tail/syeng.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anti-tail/syeng/issues"
+  },
+  "homepage": "https://github.com/anti-tail/syeng#readme",
+  "dependencies": {
+    "tshet-uinh": "0.15.4",
+    "tshet-uinh-examples": "20260629.0.1"
+  },
+  "private": true
+}

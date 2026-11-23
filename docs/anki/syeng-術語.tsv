@@ -1,0 +1,135 @@
+#separator:tab
+#html:true
+<div class=big style='font-size:40px'>音韻學</div><div class=mut>總論</div>	<div class=rom>yīnyùnxué</div><div>研究漢語歷代語音系統及其演變的學科，傳統小學之一。</div>
+<div class=big style='font-size:40px'>上古音</div><div class=mut>總論</div>	<div class=rom>shànggǔyīn</div><div>以《詩經》押韻、諧聲字等爲主要依據的先秦兩漢漢語語音。</div>
+<div class=big style='font-size:40px'>中古音</div><div class=mut>總論</div>	<div class=rom>zhōnggǔyīn</div><div>以《切韻》系韻書和早期韻圖爲代表的隋唐漢語語音。</div>
+<div class=big style='font-size:40px'>近代音</div><div class=mut>總論</div>	<div class=rom>jìndàiyīn</div><div>以《中原音韻》等爲代表的元明清漢語語音。</div>
+<div class=big style='font-size:40px'>古音學</div><div class=mut>總論</div>	<div class=rom>gǔyīnxué</div><div>專門研究上古音的學問。</div>
+<div class=big style='font-size:40px'>今音學</div><div class=mut>總論</div>	<div class=rom>jīnyīnxué</div><div>研究《切韻》音系的學問。</div>
+<div class=big style='font-size:40px'>等韻學</div><div class=mut>總論</div>	<div class=rom>děngyùnxué</div><div>研究韻圖、分析字音結構的學問。</div>
+<div class=big style='font-size:40px'>擬音</div><div class=mut>總論</div>	<div class=rom>nǐyīn</div><div>對古代讀音所作的語音構擬，常加星號 * 表示。</div>
+<div class=big style='font-size:40px'>構擬</div><div class=mut>總論</div>	<div class=rom>gòunǐ</div><div>用比較法、內部擬測等方法推定古代語音形式。</div>
+<div class=big style='font-size:40px'>切韻</div><div class=mut>文獻</div>	<div class=rom>Qièyùn</div><div>隋陸法言等編撰（601 年成書）的韻書，中古音研究的基礎。</div>
+<div class=big style='font-size:40px'>廣韻</div><div class=mut>文獻</div>	<div class=rom>Guǎngyùn</div><div>宋陳彭年等重修的《大宋重修廣韻》（1008 年），分 206 韻。</div>
+<div class=big style='font-size:40px'>集韻</div><div class=mut>文獻</div>	<div class=rom>Jíyùn</div><div>宋丁度等編（1039 年），收字多於《廣韻》。</div>
+<div class=big style='font-size:40px'>韻鏡</div><div class=mut>文獻</div>	<div class=rom>Yùnjìng</div><div>現存最早的韻圖之一，分 43 轉。</div>
+<div class=big style='font-size:40px'>七音略</div><div class=mut>文獻</div>	<div class=rom>Qīyīnlüè</div><div>鄭樵《通志》所收韻圖，分 43 轉。</div>
+<div class=big style='font-size:40px'>切韻指掌圖</div><div class=mut>文獻</div>	<div class=rom>Qièyùn Zhǐzhǎngtú</div><div>宋代韻圖，分 20 圖。</div>
+<div class=big style='font-size:40px'>經典釋文</div><div class=mut>文獻</div>	<div class=rom>Jīngdiǎn Shìwén</div><div>陸德明所撰，大量反切注音，是中古音的重要資料。</div>
+<div class=big style='font-size:40px'>說文解字</div><div class=mut>文獻</div>	<div class=rom>Shuōwén Jiězì</div><div>許慎所撰字書，所記形聲結構是諧聲分析的基礎。</div>
+<div class=big style='font-size:40px'>詩經</div><div class=mut>文獻</div>	<div class=rom>Shījīng</div><div>先秦詩歌總集，其押韻是上古韻部的主要依據。</div>
+<div class=big style='font-size:40px'>聲母</div><div class=mut>聲母</div>	<div class=rom>shēngmǔ</div><div>音節開頭的輔音。</div>
+<div class=big style='font-size:40px'>韻母</div><div class=mut>韻母</div>	<div class=rom>yùnmǔ</div><div>音節中聲母以後的部分，含介音、主元音、韻尾。</div>
+<div class=big style='font-size:40px'>聲調</div><div class=mut>聲調</div>	<div class=rom>shēngdiào</div><div>具有區別意義作用的音高變化。</div>
+<div class=big style='font-size:40px'>聲紐</div><div class=mut>聲母</div>	<div class=rom>shēngniǔ</div><div>傳統稱聲母，又稱「紐」。</div>
+<div class=big style='font-size:40px'>字母</div><div class=mut>聲母</div>	<div class=rom>zìmǔ</div><div>以代表字標示聲母，如三十六字母。</div>
+<div class=big style='font-size:40px'>三十六字母</div><div class=mut>聲母</div>	<div class=rom>sānshíliù zìmǔ</div><div>唐宋時代以三十六個代表字表示的聲母系統。</div>
+<div class=big style='font-size:40px'>守溫字母</div><div class=mut>聲母</div>	<div class=rom>Shǒuwēn zìmǔ</div><div>傳爲唐末僧守溫所定的三十字母。</div>
+<div class=big style='font-size:40px'>五音</div><div class=mut>聲母</div>	<div class=rom>wǔyīn</div><div>按發音部位分聲母爲脣、舌、齒、牙、喉五類。</div>
+<div class=big style='font-size:40px'>七音</div><div class=mut>聲母</div>	<div class=rom>qīyīn</div><div>五音加半舌、半齒。</div>
+<div class=big style='font-size:40px'>脣音</div><div class=mut>聲母</div>	<div class=rom>chúnyīn</div><div>雙脣及脣齒音：幫滂並明、非敷奉微。</div>
+<div class=big style='font-size:40px'>重脣音</div><div class=mut>聲母</div>	<div class=rom>zhòngchúnyīn</div><div>雙脣音幫滂並明。</div>
+<div class=big style='font-size:40px'>輕脣音</div><div class=mut>聲母</div>	<div class=rom>qīngchúnyīn</div><div>脣齒音非敷奉微，由重脣在三等合口條件下分化而來。</div>
+<div class=big style='font-size:40px'>舌音</div><div class=mut>聲母</div>	<div class=rom>shéyīn</div><div>舌頭音與舌上音。</div>
+<div class=big style='font-size:40px'>舌頭音</div><div class=mut>聲母</div>	<div class=rom>shétóuyīn</div><div>端透定泥。</div>
+<div class=big style='font-size:40px'>舌上音</div><div class=mut>聲母</div>	<div class=rom>shéshàngyīn</div><div>知徹澄孃。</div>
+<div class=big style='font-size:40px'>齒音</div><div class=mut>聲母</div>	<div class=rom>chǐyīn</div><div>齒頭音與正齒音。</div>
+<div class=big style='font-size:40px'>齒頭音</div><div class=mut>聲母</div>	<div class=rom>chǐtóuyīn</div><div>精清從心邪。</div>
+<div class=big style='font-size:40px'>正齒音</div><div class=mut>聲母</div>	<div class=rom>zhèngchǐyīn</div><div>照穿牀審禪，又分莊組（照二）與章組（照三）。</div>
+<div class=big style='font-size:40px'>牙音</div><div class=mut>聲母</div>	<div class=rom>yáyīn</div><div>見溪羣疑。</div>
+<div class=big style='font-size:40px'>喉音</div><div class=mut>聲母</div>	<div class=rom>hóuyīn</div><div>影曉匣喻。</div>
+<div class=big style='font-size:40px'>半舌音</div><div class=mut>聲母</div>	<div class=rom>bànshéyīn</div><div>來母。</div>
+<div class=big style='font-size:40px'>半齒音</div><div class=mut>聲母</div>	<div class=rom>bànchǐyīn</div><div>日母。</div>
+<div class=big style='font-size:40px'>清濁</div><div class=mut>聲母</div>	<div class=rom>qīngzhuó</div><div>按聲帶振動與送氣分聲母的四類。</div>
+<div class=big style='font-size:40px'>全清</div><div class=mut>聲母</div>	<div class=rom>quánqīng</div><div>不送氣清塞音、塞擦音及清擦音，如幫端見精心。</div>
+<div class=big style='font-size:40px'>次清</div><div class=mut>聲母</div>	<div class=rom>cìqīng</div><div>送氣清塞音、塞擦音，如滂透溪清。</div>
+<div class=big style='font-size:40px'>全濁</div><div class=mut>聲母</div>	<div class=rom>quánzhuó</div><div>濁塞音、塞擦音、擦音，如並定羣從邪匣。</div>
+<div class=big style='font-size:40px'>次濁</div><div class=mut>聲母</div>	<div class=rom>cìzhuó</div><div>鼻音、邊音、半元音等響音，如明泥疑來日以云。</div>
+<div class=big style='font-size:40px'>介音</div><div class=mut>韻母</div>	<div class=rom>jièyīn</div><div>聲母與主元音之間的過渡音，如 -i-、-u-。</div>
+<div class=big style='font-size:40px'>主元音</div><div class=mut>韻母</div>	<div class=rom>zhǔyuányīn</div><div>韻母中的核心元音，又稱韻腹。</div>
+<div class=big style='font-size:40px'>韻腹</div><div class=mut>韻母</div>	<div class=rom>yùnfù</div><div>即主元音。</div>
+<div class=big style='font-size:40px'>韻尾</div><div class=mut>韻母</div>	<div class=rom>yùnwěi</div><div>韻母末尾的輔音或元音。</div>
+<div class=big style='font-size:40px'>韻頭</div><div class=mut>韻母</div>	<div class=rom>yùntóu</div><div>即介音。</div>
+<div class=big style='font-size:40px'>陰聲韻</div><div class=mut>韻母</div>	<div class=rom>yīnshēngyùn</div><div>無韻尾或以元音收尾的韻。</div>
+<div class=big style='font-size:40px'>陽聲韻</div><div class=mut>韻母</div>	<div class=rom>yángshēngyùn</div><div>以鼻音 -m、-n、-ŋ 收尾的韻。</div>
+<div class=big style='font-size:40px'>入聲韻</div><div class=mut>韻母</div>	<div class=rom>rùshēngyùn</div><div>以塞音 -p、-t、-k 收尾的韻。</div>
+<div class=big style='font-size:40px'>陰陽對轉</div><div class=mut>韻母</div>	<div class=rom>yīnyáng duìzhuǎn</div><div>主元音相同的陰聲韻、陽聲韻（及入聲韻）之間的相互轉化或通假。</div>
+<div class=big style='font-size:40px'>對轉</div><div class=mut>韻母</div>	<div class=rom>duìzhuǎn</div><div>主元音相同而韻尾類型不同的韻部之間的交替。</div>
+<div class=big style='font-size:40px'>旁轉</div><div class=mut>韻母</div>	<div class=rom>pángzhuǎn</div><div>韻尾類型相同而主元音相近的韻部之間的交替。</div>
+<div class=big style='font-size:40px'>通轉</div><div class=mut>韻母</div>	<div class=rom>tōngzhuǎn</div><div>韻部之間較遠的通押或交替的泛稱。</div>
+<div class=big style='font-size:40px'>韻</div><div class=mut>韻母</div>	<div class=rom>yùn</div><div>韻書中押韻的單位；《廣韻》分 206 韻。</div>
+<div class=big style='font-size:40px'>韻目</div><div class=mut>韻母</div>	<div class=rom>yùnmù</div><div>每個韻的代表字，如東、董、送、屋。</div>
+<div class=big style='font-size:40px'>韻部</div><div class=mut>韻母</div>	<div class=rom>yùnbù</div><div>上古押韻歸納出的類，如之部、魚部。</div>
+<div class=big style='font-size:40px'>韻系</div><div class=mut>韻母</div>	<div class=rom>yùnxì</div><div>平上去入相承的一組韻，如東董送屋。</div>
+<div class=big style='font-size:40px'>韻類</div><div class=mut>韻母</div>	<div class=rom>yùnlèi</div><div>依反切下字系聯所得的韻母類別。</div>
+<div class=big style='font-size:40px'>攝</div><div class=mut>韻圖</div>	<div class=rom>shè</div><div>韻圖中把韻尾相同、主元音相近的韻歸併成的大類，共十六攝。</div>
+<div class=big style='font-size:40px'>十六攝</div><div class=mut>韻圖</div>	<div class=rom>shíliù shè</div><div>通江止遇蟹臻山效果假宕梗曾流深咸。</div>
+<div class=big style='font-size:40px'>等</div><div class=mut>韻圖</div>	<div class=rom>děng</div><div>韻圖按韻母洪細分爲一二三四等。</div>
+<div class=big style='font-size:40px'>等呼</div><div class=mut>韻圖</div>	<div class=rom>děnghū</div><div>等與開合口的合稱。</div>
+<div class=big style='font-size:40px'>開口</div><div class=mut>韻圖</div>	<div class=rom>kāikǒu</div><div>無 -u- 介音或圓脣成分的韻母。</div>
+<div class=big style='font-size:40px'>合口</div><div class=mut>韻圖</div>	<div class=rom>hékǒu</div><div>有 -u- 介音或圓脣成分的韻母。</div>
+<div class=big style='font-size:40px'>開合</div><div class=mut>韻圖</div>	<div class=rom>kāihé</div><div>開口與合口。</div>
+<div class=big style='font-size:40px'>轉</div><div class=mut>韻圖</div>	<div class=rom>zhuǎn</div><div>《韻鏡》《七音略》中韻圖的單位，一轉即一張圖。</div>
+<div class=big style='font-size:40px'>內轉</div><div class=mut>韻圖</div>	<div class=rom>nèizhuǎn</div><div>韻圖中二等位置無獨立韻的轉。</div>
+<div class=big style='font-size:40px'>外轉</div><div class=mut>韻圖</div>	<div class=rom>wàizhuǎn</div><div>韻圖中二等位置有獨立韻的轉。</div>
+<div class=big style='font-size:40px'>重紐</div><div class=mut>韻圖</div>	<div class=rom>chóngniǔ</div><div>支脂祭真仙宵侵鹽等韻的脣牙喉音分兩類，韻圖分置三等、四等。</div>
+<div class=big style='font-size:40px'>重紐三等</div><div class=mut>韻圖</div>	<div class=rom>chóngniǔ sānděng</div><div>即 B 類，韻圖列於三等。</div>
+<div class=big style='font-size:40px'>重紐四等</div><div class=mut>韻圖</div>	<div class=rom>chóngniǔ sìděng</div><div>即 A 類，韻圖列於四等。</div>
+<div class=big style='font-size:40px'>假四等</div><div class=mut>韻圖</div>	<div class=rom>jiǎ sìděng</div><div>實屬三等而韻圖借四等位置排列的字，如精組、以母三等字。</div>
+<div class=big style='font-size:40px'>假二等</div><div class=mut>韻圖</div>	<div class=rom>jiǎ èrděng</div><div>實屬三等而韻圖借二等位置排列的莊組字。</div>
+<div class=big style='font-size:40px'>平聲</div><div class=mut>聲調</div>	<div class=rom>píngshēng</div><div>中古四聲之一。</div>
+<div class=big style='font-size:40px'>上聲</div><div class=mut>聲調</div>	<div class=rom>shǎngshēng</div><div>中古四聲之一，「上」讀 shǎng。</div>
+<div class=big style='font-size:40px'>去聲</div><div class=mut>聲調</div>	<div class=rom>qùshēng</div><div>中古四聲之一。</div>
+<div class=big style='font-size:40px'>入聲</div><div class=mut>聲調</div>	<div class=rom>rùshēng</div><div>中古四聲之一，以 -p、-t、-k 收尾。</div>
+<div class=big style='font-size:40px'>四聲</div><div class=mut>聲調</div>	<div class=rom>sìshēng</div><div>平上去入。</div>
+<div class=big style='font-size:40px'>四聲相承</div><div class=mut>聲調</div>	<div class=rom>sìshēng xiāngchéng</div><div>同一韻系的平上去入各韻相互配合。</div>
+<div class=big style='font-size:40px'>平仄</div><div class=mut>聲調</div>	<div class=rom>píngzè</div><div>平聲與上去入（仄聲）之分。</div>
+<div class=big style='font-size:40px'>反切</div><div class=mut>注音</div>	<div class=rom>fǎnqiè</div><div>用兩字拼一字之音：上字取聲母，下字取韻母和聲調。</div>
+<div class=big style='font-size:40px'>反切上字</div><div class=mut>注音</div>	<div class=rom>fǎnqiè shàngzì</div><div>反切的第一字，表聲母。</div>
+<div class=big style='font-size:40px'>反切下字</div><div class=mut>注音</div>	<div class=rom>fǎnqiè xiàzì</div><div>反切的第二字，表韻母與聲調。</div>
+<div class=big style='font-size:40px'>小韻</div><div class=mut>注音</div>	<div class=rom>xiǎoyùn</div><div>韻書中同音字組，以首字爲代表並注反切。</div>
+<div class=big style='font-size:40px'>直音</div><div class=mut>注音</div>	<div class=rom>zhíyīn</div><div>以同音字注音的方法。</div>
+<div class=big style='font-size:40px'>讀若</div><div class=mut>注音</div>	<div class=rom>dúruò</div><div>漢代注音術語，以音近字比況。</div>
+<div class=big style='font-size:40px'>系聯法</div><div class=mut>方法</div>	<div class=rom>xìliánfǎ</div><div>陳澧用以歸納反切上下字類別的方法。</div>
+<div class=big style='font-size:40px'>諧聲</div><div class=mut>方法</div>	<div class=rom>xiéshēng</div><div>形聲字與其聲符之間的語音關係。</div>
+<div class=big style='font-size:40px'>聲符</div><div class=mut>方法</div>	<div class=rom>shēngfú</div><div>形聲字中表音的部分。</div>
+<div class=big style='font-size:40px'>諧聲系列</div><div class=mut>方法</div>	<div class=rom>xiéshēng xìliè</div><div>同一聲符的一組形聲字。</div>
+<div class=big style='font-size:40px'>同源詞</div><div class=mut>方法</div>	<div class=rom>tóngyuáncí</div><div>音義相關、出自同一詞根的詞。</div>
+<div class=big style='font-size:40px'>通假</div><div class=mut>方法</div>	<div class=rom>tōngjiǎ</div><div>借用音同音近的字表示本字。</div>
+<div class=big style='font-size:40px'>押韻</div><div class=mut>方法</div>	<div class=rom>yāyùn</div><div>詩文句末用韻相同的字。</div>
+<div class=big style='font-size:40px'>合韻</div><div class=mut>方法</div>	<div class=rom>héyùn</div><div>不同韻部的字偶爾相押。</div>
+<div class=big style='font-size:40px'>古無輕脣音</div><div class=mut>學說</div>	<div class=rom>gǔ wú qīngchúnyīn</div><div>錢大昕：上古沒有輕脣音，非敷奉微讀如幫滂並明。</div>
+<div class=big style='font-size:40px'>古無舌上音</div><div class=mut>學說</div>	<div class=rom>gǔ wú shéshàngyīn</div><div>錢大昕：上古沒有舌上音，知徹澄讀如端透定。</div>
+<div class=big style='font-size:40px'>娘日歸泥</div><div class=mut>學說</div>	<div class=rom>niáng rì guī ní</div><div>章炳麟：上古娘母、日母歸泥母。</div>
+<div class=big style='font-size:40px'>喻三歸匣</div><div class=mut>學說</div>	<div class=rom>yù sān guī xiá</div><div>曾運乾：喻母三等（云母）上古歸匣母。</div>
+<div class=big style='font-size:40px'>喻四歸定</div><div class=mut>學說</div>	<div class=rom>yù sì guī dìng</div><div>曾運乾：喻母四等（以母）上古與定母相近。</div>
+<div class=big style='font-size:40px'>照二歸精</div><div class=mut>學說</div>	<div class=rom>zhào èr guī jīng</div><div>黃侃：莊組上古歸精組。</div>
+<div class=big style='font-size:40px'>照三歸端</div><div class=mut>學說</div>	<div class=rom>zhào sān guī duān</div><div>章組上古多與端組諧聲，故有此說（說法不一）。</div>
+<div class=big style='font-size:40px'>古無去聲</div><div class=mut>學說</div>	<div class=rom>gǔ wú qùshēng</div><div>段玉裁：上古無去聲。</div>
+<div class=big style='font-size:40px'>古無上去</div><div class=mut>學說</div>	<div class=rom>gǔ wú shǎng qù</div><div>黃侃：上古只有平、入二聲（有爭議）。</div>
+<div class=big style='font-size:40px'>同聲必同部</div><div class=mut>學說</div>	<div class=rom>tóng shēng bì tóng bù</div><div>段玉裁：同聲符的字上古必屬同一韻部。</div>
+<div class=big style='font-size:40px'>長入</div><div class=mut>學說</div>	<div class=rom>chángrù</div><div>王力：上古入聲有長短，長入後變去聲。</div>
+<div class=big style='font-size:40px'>六元音系統</div><div class=mut>學說</div>	<div class=rom>liù yuányīn xìtǒng</div><div>認爲上古有 *i *e *a *o *u *ə（或 *ɯ）六個元音的學說。</div>
+<div class=big style='font-size:40px'>咽化</div><div class=mut>學說</div>	<div class=rom>yānhuà</div><div>白一平、沙加爾以咽化聲母 *Cˤ 解釋中古非三等字。</div>
+<div class=big style='font-size:40px'>A型音節</div><div class=mut>學說</div>	<div class=rom>A xíng yīnjié</div><div>白—沙體系中帶咽化的音節，中古多變一二四等。</div>
+<div class=big style='font-size:40px'>B型音節</div><div class=mut>學說</div>	<div class=rom>B xíng yīnjié</div><div>白—沙體系中不帶咽化的音節，中古變三等。</div>
+<div class=big style='font-size:40px'>長短元音</div><div class=mut>學說</div>	<div class=rom>chángduǎn yuányīn</div><div>鄭張尚芳、潘悟雲以長元音解釋中古一二四等、短元音解釋三等。</div>
+<div class=big style='font-size:40px'>墊介音</div><div class=mut>學說</div>	<div class=rom>diànjièyīn</div><div>鄭張體系中的 -r-、-l-、-j- 等介音。</div>
+<div class=big style='font-size:40px'>前綴</div><div class=mut>學說</div>	<div class=rom>qiánzhuì</div><div>上古詞頭，如 *s-、*m-、*N-、*k-、*t-。</div>
+<div class=big style='font-size:40px'>後綴</div><div class=mut>學說</div>	<div class=rom>hòuzhuì</div><div>上古詞尾，如 *-s、*-ʔ。</div>
+<div class=big style='font-size:40px'>次要音節</div><div class=mut>學說</div>	<div class=rom>cìyào yīnjié</div><div>白—沙體系中主音節前的弱化音節，如 *Cə.。</div>
+<div class=big style='font-size:40px'>清鼻音</div><div class=mut>學說</div>	<div class=rom>qīngbíyīn</div><div>上古清響音 *m̥ *n̥ *ŋ̊ 等，中古變曉、透等清聲母。</div>
+<div class=big style='font-size:40px'>複輔音</div><div class=mut>學說</div>	<div class=rom>fùfǔyīn</div><div>上古聲母中的輔音叢，如 *kr-、*pl-。</div>
+<div class=big style='font-size:40px'>聲調起源</div><div class=mut>學說</div>	<div class=rom>shēngdiào qǐyuán</div><div>奧德里古爾：上聲源於 *-ʔ，去聲源於 *-s。</div>
+<div class=big style='font-size:40px'>白一平</div><div class=mut>學者</div>	<div class=rom>Bái Yīpíng</div><div>William H. Baxter。</div>
+<div class=big style='font-size:40px'>沙加爾</div><div class=mut>學者</div>	<div class=rom>Shā Jiā&#x27;ěr</div><div>Laurent Sagart。</div>
+<div class=big style='font-size:40px'>鄭張尚芳</div><div class=mut>學者</div>	<div class=rom>Zhèngzhāng Shàngfāng</div><div>《上古音系》作者。</div>
+<div class=big style='font-size:40px'>潘悟雲</div><div class=mut>學者</div>	<div class=rom>Pān Wùyún</div><div>上古音研究者。</div>
+<div class=big style='font-size:40px'>王力</div><div class=mut>學者</div>	<div class=rom>Wáng Lì</div><div>《漢語史稿》《詩經韻讀》作者，上古三十韻部。</div>
+<div class=big style='font-size:40px'>高本漢</div><div class=mut>學者</div>	<div class=rom>Gāo Běnhàn</div><div>Bernhard Karlgren。</div>
+<div class=big style='font-size:40px'>李方桂</div><div class=mut>學者</div>	<div class=rom>Lǐ Fāngguì</div><div>《上古音研究》作者。</div>
+<div class=big style='font-size:40px'>董同龢</div><div class=mut>學者</div>	<div class=rom>Dǒng Tónghé</div><div>《上古音韻表稿》作者。</div>
+<div class=big style='font-size:40px'>陸法言</div><div class=mut>學者</div>	<div class=rom>Lù Fǎyán</div><div>《切韻》編者。</div>
+<div class=big style='font-size:40px'>陳澧</div><div class=mut>學者</div>	<div class=rom>Chén Lǐ</div><div>《切韻考》作者，創系聯法。</div>
+<div class=big style='font-size:40px'>錢大昕</div><div class=mut>學者</div>	<div class=rom>Qián Dàxīn</div><div>清代學者，提出古無輕脣音、古無舌上音。</div>
+<div class=big style='font-size:40px'>段玉裁</div><div class=mut>學者</div>	<div class=rom>Duàn Yùcái</div><div>《說文解字注》《六書音均表》作者。</div>

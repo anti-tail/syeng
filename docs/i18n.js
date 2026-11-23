@@ -7,7 +7,7 @@ const I18N = {
     brandSub: '上古—中古漢語音韻',
     'nav.查字': '查字', 'nav.韻表': '二百六韻', 'nav.音節表': '音節表', 'nav.聲母': '聲母', 'nav.韻部': '韻部對應',
     'nav.詩經': '詩經押韻', 'nav.音變': '音變統計', 'nav.術語': '術語', 'nav.測驗': '測驗', 'nav.書籤': '書籤', 'nav.說明': '說明',
-    footer: '資料：廣韻（<a href="https://github.com/nk2028/tshet-uinh-js">nk2028/tshet-uinh</a>，MIT）；白一平—沙加爾 2014、鄭張尚芳上古擬音與 Baxter 中古音轉寫（<a href="https://en.wiktionary.org/">Wiktionary</a>，經 <a href="https://kaikki.org/">kaikki.org</a>，CC BY-SA 4.0）；詩經押韻：王力《詩經韻讀》1980、Baxter 1992（<a href="https://github.com/digling/ard-data">digling/ard-data</a>，GPL-3.0）。對應關係與韻部歸屬爲本站依規則推得，詳見<a href="#/說明">說明</a>。',
+    footer: '資料：廣韻（<a href="https://github.com/nk2028/tshet-uinh-js">nk2028/tshet-uinh</a>，MIT）；白一平—沙加爾 2014、鄭張尚芳上古擬音與 白氏拼音（Baxter 的中古音轉寫）（<a href="https://en.wiktionary.org/">Wiktionary</a>，經 <a href="https://kaikki.org/">kaikki.org</a>，CC BY-SA 4.0）；詩經押韻：王力《詩經韻讀》1980、Baxter 1992（<a href="https://github.com/digling/ard-data">digling/ard-data</a>，GPL-3.0）。對應關係與韻部歸屬爲本站依規則推得，詳見<a href="#/說明">說明</a>。',
     loading: '載入中……', error: '錯誤：', noData: '無資料',
     bmTitle: '加入／移除書籤',
     tie: '對應未定', tieTip: '多個中古讀音得分相同，對應未定', none: '未對應', noneTip: '未能對應到中古讀音',
@@ -19,7 +19,7 @@ const I18N = {
     'card.詩經': '王力、Baxter 的押韻判定', 'card.音變': '聲調、等的來源', 'card.術語': '音韻學術語拼音', 'card.測驗': '選擇題', 'card.書籤': '收藏與匯出 Anki',
     lookupH: '查字', lookupPh: '輸入漢字（可多字）', lookupBtn: '查', lookupHint: '輸入漢字以查詢其中古音韻地位與上古擬音。',
     qie: '切', xiSuffix: '韻系', sheSuffix: '攝',
-    th_xy: '小韻', th_dw: '音韻地位', th_bx: 'Baxter / 切韻拼音', th_bs: '白—沙 2014', th_zs: '鄭張尚芳', th_gl: '廣韻釋義',
+    th_xy: '小韻', th_dw: '音韻地位', th_bx: '白氏拼音 / 切韻拼音', th_bs: '白—沙 2014', th_zs: '鄭張尚芳', th_gl: '廣韻釋義',
     wangLine: '王力《詩經韻讀》韻腳：',
     yunH: '二百六韻', yunSub: '四聲相承表',
     yunP: '按《廣韻》韻序。每個韻目下爲音韻學慣用讀音（拼音），數字爲小韻數。點韻目查看該韻系的音節表。',
@@ -69,7 +69,7 @@ const I18N = {
     'anki.all': '全部（前五組，不含詩經）', 'anki.韻目': '二百六韻目：拼音、四聲相承、攝', 'anki.聲母': '三十八母：拼音、清濁、上古來源', 'anki.術語': '音韻學術語：拼音、說明',
     'anki.字·上古中古': '常用字：音韻地位、白—沙、鄭張', 'anki.小韻·音韻地位': '《廣韻》小韻：代表字 → 音韻地位', 'anki.詩經韻腳·王力韻部': '詩經韻腳字 → 王力韻部（GPL-3.0）',
     srcH: '資料來源', src: `<li>《廣韻》小韻、反切、釋義、音韻地位及各家推導（Baxter、切韻拼音、unt、王力、潘悟雲、高本漢、普通話推導）：nk2028 <a href="https://github.com/nk2028/tshet-uinh-js">tshet-uinh</a> 0.15.4 與 <a href="https://github.com/nk2028/tshet-uinh-examples">tshet-uinh-examples</a>（MIT）。</li>
-  <li>白一平—沙加爾（2014）上古擬音、鄭張尚芳上古擬音、Baxter 中古音轉寫：英文維基詞典漢字條目，經 kaikki.org（wiktextract）抽取（CC BY-SA 4.0）。</li>
+  <li>白一平—沙加爾（2014）上古擬音、鄭張尚芳上古擬音、白氏拼音（Baxter 的中古音轉寫）：英文維基詞典漢字條目，經 kaikki.org（wiktextract）抽取（CC BY-SA 4.0）。</li>
   <li>詩經押韻：王力《詩經韻讀》（1980）與 Baxter《A Handbook of Old Chinese Phonology》（1992）的押韻判定，由 List 等數位化，見 <a href="https://github.com/digling/ard-data">digling/ard-data</a>（GPL-3.0）。本站的詩經資料（shijing.json、wangbu.json）與據此生成的 Anki 牌組依 GPL-3.0 提供。</li>
   <li>Starostin（1989）上古擬音：<a href="https://github.com/digling/vowel-purity-paper">digling/vowel-purity-paper</a>（GPL-3.0），只含詩經韻腳字。本站的 starostin.json 依 GPL-3.0 提供。</li>`,
     derH: '本站的推得部分', der: `<li><b>上古—中古讀音的對應</b>：維基詞典的抽取資料不保留多音字中上古讀音與中古讀音的配對，也遺漏了白—沙的中綴 *&lt;r&gt;。白—沙的配對與中綴都以白一平、沙加爾公布的 Baxter–Sagart Old Chinese reconstruction 1.1 一覽核對後確定，一覽中找不到的形式不收。鄭張尚芳沒有可核對的資料，只收對應能唯一確定者（讀音數與擬音數相同且按順序相合，或聲調、等、韻尾類型、清濁的評分明顯高於其他讀音）。中古讀音只收與《廣韻》小韻完全一致或經上述一覽核對者。</li>
@@ -87,7 +87,7 @@ const I18N = {
     brandSub: '上古・中古漢語の音韻',
     'nav.查字': '字を引く', 'nav.韻表': '二百六韻', 'nav.音節表': '音節表', 'nav.聲母': '声母', 'nav.韻部': '韻部の対応',
     'nav.詩經': '詩経の押韻', 'nav.音變': '音変化の統計', 'nav.術語': '用語', 'nav.測驗': 'クイズ', 'nav.書籤': 'ブックマーク', 'nav.說明': 'このサイトについて',
-    footer: 'データ：広韻は <a href="https://github.com/nk2028/tshet-uinh-js">nk2028/tshet-uinh</a>（MIT），白一平・沙加爾 2014 と鄭張尚芳の上古音，Baxter 式の中古音は <a href="https://en.wiktionary.org/">Wiktionary</a> を <a href="https://kaikki.org/">kaikki.org</a> 経由で取得（CC BY-SA 4.0），詩経の押韻は王力『詩経韻読』1980 と Baxter 1992 で <a href="https://github.com/digling/ard-data">digling/ard-data</a>（GPL-3.0）。上古音と中古音の対応づけと韻部の帰属は，このサイトで規則に基づいて推定したものです。くわしくは<a href="#/說明">このサイトについて</a>をご覧ください。',
+    footer: 'データ：広韻は <a href="https://github.com/nk2028/tshet-uinh-js">nk2028/tshet-uinh</a>（MIT），白一平・沙加爾 2014 と鄭張尚芳の上古音，白氏拼音すなわち Baxter による中古音の表記は <a href="https://en.wiktionary.org/">Wiktionary</a> を <a href="https://kaikki.org/">kaikki.org</a> 経由で取得（CC BY-SA 4.0），詩経の押韻は王力『詩経韻読』1980 と Baxter 1992 で <a href="https://github.com/digling/ard-data">digling/ard-data</a>（GPL-3.0）。上古音と中古音の対応づけと韻部の帰属は，このサイトで規則に基づいて推定したものです。くわしくは<a href="#/說明">このサイトについて</a>をご覧ください。',
     loading: '読み込み中…', error: 'エラー：', noData: 'データがありません',
     bmTitle: 'ブックマークに追加・削除',
     tie: '対応未確定', tieTip: '複数の中古音が同じ点数になり，対応を決められませんでした', none: '対応なし', noneTip: '対応する中古音が見つかりませんでした',
@@ -99,7 +99,7 @@ const I18N = {
     'card.詩經': '王力と Baxter の押韻判定', 'card.音變': '声調と等の由来', 'card.術語': '音韻学の用語と拼音', 'card.測驗': '4択クイズ', 'card.書籤': '保存と Anki への書き出し',
     lookupH: '字を引く', lookupPh: '漢字を入力（複数可）', lookupBtn: '引く', lookupHint: '漢字を入力すると，中古の音韻地位と上古音が表示されます。',
     qie: '切', xiSuffix: '韻系', sheSuffix: '摂',
-    th_xy: '小韻', th_dw: '音韻地位', th_bx: 'Baxter / 切韻拼音', th_bs: '白一平・沙加爾 2014', th_zs: '鄭張尚芳', th_gl: '広韻の釈義',
+    th_xy: '小韻', th_dw: '音韻地位', th_bx: '白氏拼音 / 切韻拼音', th_bs: '白一平・沙加爾 2014', th_zs: '鄭張尚芳', th_gl: '広韻の釈義',
     wangLine: '王力『詩経韻読』での韻脚：',
     yunH: '二百六韻', yunSub: '四声相承表',
     yunP: '『広韻』の韻の順に並べています。韻目の下は音韻学で慣用される読みの拼音，右の数字は小韻の数です。韻目を押すと，その韻系の音節表に移ります。',
@@ -149,7 +149,7 @@ const I18N = {
     'anki.all': 'まとめて　詩経以外の5組', 'anki.韻目': '206の韻目：拼音・四声相承・摂', 'anki.聲母': '38の声母：拼音・清濁・上古での由来', 'anki.術語': '音韻学の用語：拼音・説明',
     'anki.字·上古中古': '常用字：音韻地位・白一平・沙加爾・鄭張', 'anki.小韻·音韻地位': '広韻の小韻：代表字から音韻地位', 'anki.詩經韻腳·王力韻部': '詩経の韻脚字から王力の韻部　GPL-3.0',
     srcH: 'データの出典', src: `<li>広韻の小韻・反切・釈義・音韻地位と，各体系の推導（Baxter，切韻拼音，unt，王力，潘悟雲，高本漢，普通話）：nk2028 の <a href="https://github.com/nk2028/tshet-uinh-js">tshet-uinh</a> 0.15.4 と <a href="https://github.com/nk2028/tshet-uinh-examples">tshet-uinh-examples</a>，MIT ライセンス。</li>
-  <li>白一平・沙加爾 2014 と鄭張尚芳の上古音，Baxter 式の中古音：英語版 Wiktionary の漢字の項目を kaikki.org（wiktextract）経由で取得，CC BY-SA 4.0。</li>
+  <li>白一平・沙加爾 2014 と鄭張尚芳の上古音，白氏拼音すなわち Baxter による中古音の表記：英語版 Wiktionary の漢字の項目を kaikki.org（wiktextract）経由で取得，CC BY-SA 4.0。</li>
   <li>詩経の押韻：王力『詩経韻読』1980 と Baxter『A Handbook of Old Chinese Phonology』1992 の押韻判定を List らがデジタル化した <a href="https://github.com/digling/ard-data">digling/ard-data</a>，GPL-3.0。このサイトの詩経データ shijing.json・wangbu.json と，そこから作った Anki デッキは GPL-3.0 で公開しています。</li>
   <li>Starostin 1989 の上古再建音：<a href="https://github.com/digling/vowel-purity-paper">digling/vowel-purity-paper</a>，GPL-3.0。詩経の韻脚字だけです。このサイトの starostin.json は GPL-3.0 で公開しています。</li>`,
     derH: 'このサイトで推定した部分', der: `<li><b>上古音と中古音の対応</b>　Wiktionary から取ったデータでは，多音字の上古音と中古音の組み合わせが失われ，白一平・沙加爾の挿入辞 *&lt;r&gt; も抜けていました。白一平・沙加爾の形は，二人が公開している Baxter–Sagart Old Chinese reconstruction 1.1 の一覧と照合して組み合わせと挿入辞を確定し，一覧にない形は収めていません。鄭張尚芳は照合できる資料がないため，対応が一つに決まるものだけを収めています。読みの数と再建音の数が同じで順に合う場合か，声調・等・韻尾の類型・清濁による点数がほかの読みより明らかに高い場合です。中古音は，広韻の小韻と完全に一致したものか，上の一覧で確かめられたものだけです。</li>
@@ -179,7 +179,7 @@ const I18N = {
     'card.詩經': 'Rhyme judgments of Wang Li and Baxter', 'card.音變': 'Where tones and divisions come from', 'card.術語': 'Phonological terms with pinyin', 'card.測驗': 'Multiple choice', 'card.書籤': 'Save and export to Anki',
     lookupH: 'Lookup', lookupPh: 'Type one or more characters', lookupBtn: 'Look up', lookupHint: 'Type characters to see their Middle Chinese position and Old Chinese reconstructions.',
     qie: '切', xiSuffix: ' rhyme set', sheSuffix: ' shè',
-    th_xy: 'Homophone group', th_dw: 'Phonological position', th_bx: 'Baxter / Tshet-uinh', th_bs: 'Baxter–Sagart 2014', th_zs: 'Zhengzhang', th_gl: 'Guangyun gloss',
+    th_xy: 'Homophone group', th_dw: 'Phonological position', th_bx: 'Baxter transcription / Tshet-uinh', th_bs: 'Baxter–Sagart 2014', th_zs: 'Zhengzhang', th_gl: 'Guangyun gloss',
     wangLine: 'Shijing rhyme word in Wang Li 1980: ',
     yunH: 'The 206 rhymes', yunSub: 'four-tone table',
     yunP: 'In Guangyun order. Under each heading is its customary reading in pinyin; the number is the count of homophone groups. Click a heading to see the syllable chart of that rhyme set.',

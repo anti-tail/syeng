@@ -18,7 +18,7 @@
 | 詩經押韻 | 305 篇的韻腳：王力《詩經韻讀》（韻部、合韻、通韻）與 Baxter 1992 的押韻組；王力韻部與本站推得韻部的比較 |
 | 音變統計 | 韻尾·後綴 → 聲調、音節類型 → 等 的交叉表 |
 | 術語 | 133 條音韻學術語的拼音與說明 |
-| 測驗 | 18 種題型；選擇或輸入（拼音、漢字、白氏拼音、上古擬音）；按攝、韻、等、開合、聲母組、聲調篩選；三級難度；答錯自動加入書籤 |
+| 測驗 | 23 種題型（含韻與等、聲母與等的分布，互補分布）；可只考平聲韻目；選擇或輸入（拼音、漢字、白氏拼音、上古擬音）；按攝、韻、等、開合、聲母組、聲調篩選；三級難度；答錯自動加入書籤 |
 | 書籤 | 收藏、以書籤出題、匯出 Anki TSV |
 | 說明 | 書籤小工具（bookmarklet）、Anki 牌組下載、資料說明 |
 
@@ -27,7 +27,7 @@ Anki 牌組（`docs/anki/`；日本語版 `docs/anki/ja/`、English `docs/anki/e
 ## 資料與推得部分
 
 - 《廣韻》：nk2028 [tshet-uinh](https://github.com/nk2028/tshet-uinh-js) 0.15.4（MIT）
-- 上古擬音、Baxter 中古音：Wiktionary，經 [kaikki.org](https://kaikki.org/) 抽取（CC BY-SA 4.0）
+- 上古擬音、白氏拼音（Baxter 的中古音轉寫，非擬音）：Wiktionary，經 [kaikki.org](https://kaikki.org/) 抽取（CC BY-SA 4.0）
 - Starostin 1989 上古擬音（詩經韻腳字）：[digling/vowel-purity-paper](https://github.com/digling/vowel-purity-paper)（GPL-3.0）
 - 詩經押韻：王力《詩經韻讀》1980、Baxter 1992 的押韻判定，[digling/ard-data](https://github.com/digling/ard-data)（GPL-3.0）
 - 唐作藩《上古音手冊》等字表：未找到可公開使用的數位資料，未收錄

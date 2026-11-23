@@ -35,3 +35,13 @@ Syeng — 授權 / License
      tshet-uinh-examples（推導方案），MIT License, Copyright (c) nk2028。
 
 3. data/manual/ 下的韻目表、拼音表、術語表爲本專案編寫，按 CC BY-SA 4.0 提供。
+
+4. 詩經押韻資料（data/raw/digling/、docs/data/shijing.json、docs/data/wangbu.json、
+   docs/anki/syeng-詩經韻腳·王力韻部.*、scripts/05_shijing.py の出力）
+   GNU General Public License v3.0（全文は LICENSE-GPL-3.0）
+
+   來源：digling/ard-data（https://github.com/digling/ard-data，GPL-3.0），
+   Johann-Mattis List 等對以下兩書押韻判定的數位化：
+   - 王力《詩經韻讀》，上海古籍出版社，1980。
+   - William H. Baxter, A Handbook of Old Chinese Phonology, de Gruyter, 1992.
+   syeng-all.apkg 不含此部分。

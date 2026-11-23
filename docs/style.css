@@ -69,3 +69,13 @@ svg .num { font-size: 11px; fill: var(--mut); font-family: var(--sans); }
 .loading { color: var(--mut); }
 kbd { border: 1px solid var(--line); border-radius: 3px; padding: 0 .3rem; font-size: .8rem; }
 .bmlet { display: inline-block; padding: .4rem .9rem; border-radius: 6px; background: var(--acc); color: #fff !important; }
+
+.poem { font: 1.3rem/2.1 var(--serif); }
+.poem .ln { display: block; }
+.rw { border-radius: 3px; padding: 0 .1rem; cursor: pointer; }
+.rw sup { font: .65rem var(--sans); margin-left: 1px; }
+.g0 { background: #f6d7cf; } .g1 { background: #d3e6f3; } .g2 { background: #dcefd4; } .g3 { background: #f3e5bf; }
+.g4 { background: #e6d9f2; } .g5 { background: #d6efec; } .g6 { background: #f2d6e6; } .g7 { background: #e6e6e6; }
+@media (prefers-color-scheme: dark) { .rw { color: #1f1d1a; } }
+.stz { display: grid; grid-template-columns: minmax(14rem, 1fr) minmax(12rem, 18rem); gap: .3rem 1.5rem; border-top: 1px solid var(--line); padding: .6rem 0; }
+.stz .lab { font-size: .85rem; color: var(--mut); }

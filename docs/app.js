@@ -80,7 +80,7 @@ PAGES[''] = async () => {
 };
 
 PAGES['查字'] = async (qs) => {
-  await need('xiaoyun', 'yun206', 'chars');
+  await need('xiaoyun', 'yun206', 'chars', 'wangbu');
   const q = (qs.get('q') || '').trim();
   let h = `<h1>查字</h1><form class="row" onsubmit="location.hash='#/查字?q='+encodeURIComponent(this.q.value);return false">
     <input class="big han" name="q" type="search" value="${esc(q)}" placeholder="輸入漢字（可多字）"> <button class="pri">查</button></form>`;
@@ -103,8 +103,10 @@ function charCard(c) {
       <td>${ocCell(r.b)}</td><td>${ocCell(r.z)}</td>
       <td class="small mut">${esc(r.g || '')}</td></tr>`;
   }
+  const wb = D.wangbu.chars[c];
+  const wline = wb ? `<p class="small">王力《詩經韻讀》韻腳：${Object.entries(wb.bu).map(([b, n]) => `<b class="han">${b}部</b>×${n}`).join('、')}　<span class="ipa mut">${esc(wb.rc.map(x => '*' + x).join(' '))}</span>　${wb.refs.map(([n, st]) => `<a href="#/詩經?p=${n}">${st}</a>`).join(' ')}</p>` : '';
   return `<div class="card"><div class="row"><span class="zi">${esc(c)}</span>
-    <span class="rom">${esc(v.p.join(', '))}</span><span class="mut small">${esc(v.g.join('; '))}</span></div>
+    <span class="rom">${esc(v.p.join(', '))}</span><span class="mut small">${esc(v.g.join('; '))}</span></div>${wline}
     <div class="scroll"><table><tr><th></th><th>小韻</th><th>音韻地位</th><th>Baxter / 切韻拼音</th><th>白—沙 2014</th><th>鄭張尚芳</th><th>廣韻釋義</th></tr>${rows}</table></div></div>`;
 }
 
@@ -207,6 +209,52 @@ function flowTable(d, bu) {
   return h + '</table></div>';
 }
 
+PAGES['詩經'] = async (qs) => {
+  await need('shijing', 'wangbu', 'chars', 'xiaoyun', 'yun206');
+  const P = D.shijing.poems;
+  const n = qs.get('p');
+  const mode = qs.get('m') === 'bx' ? 'bx' : 'wang';
+  const sel = `<select onchange="location.hash='#/詩經?p='+this.value+'&m=${mode}'"><option value="">— 選擇篇目 —</option>${P.map(p => `<option value="${p.n}" ${p.n === n ? 'selected' : ''}>${p.n}. ${esc(p.b)}·${esc(p.c)}·${esc(p.t)}</option>`).join('')}</select>`;
+  let h = `<h1>詩經押韻</h1><div class="row">${sel}
+    ${[['wang', '王力 1980'], ['bx', 'Baxter 1992']].map(([k, t]) => `<a class="pill ${k === mode ? 'on' : ''}" href="#/詩經?p=${n || ''}&m=${k}">${t}</a>`).join('')}
+    ${n ? `<a href="#/詩經?p=${Math.max(1, +n - 1)}&m=${mode}">← 上一篇</a><a href="#/詩經?p=${Math.min(305, +n + 1)}&m=${mode}">下一篇 →</a>` : ''}</div>`;
+  if (!n) return h + shijingStats();
+  const p = P.find(p => p.n === n);
+  h += `<h2 class="han">${esc(p.t)} <span class="mut small">${esc(p.b)}·${esc(p.c)}·第 ${p.n} 篇</span></h2>
+   <p class="small mut">${mode === 'wang' ? '色塊與字母爲王力《詩經韻讀》的押韻組（大寫字母爲跨章的韻），右欄爲其韻部注；上標爲王力擬音。' : '色塊與字母爲 Baxter（1992）的押韻判定，上標爲白—沙式擬音（Baxter 1992 資料所附）。'}滑鼠移到韻腳上可看中古音與兩家上古擬音，點擊查字。</p>`;
+  for (const st of p.s) {
+    const letters = [...new Set(st.l.map(l => mode === 'wang' ? l[2] : l[4]?.[1]).filter(Boolean))];
+    const cls = L => 'g' + (letters.indexOf(L) % 8);
+    const lines = st.l.map(([t, rw, L, rc, bx]) => {
+      const key = mode === 'wang' ? (rw ? L : '') : (bx ? bx[1] : '');
+      const ch = mode === 'wang' ? rw : bx?.[0];
+      if (!key || !ch) return `<span class="ln">${esc(t)}</span>`;
+      const k = t.lastIndexOf(ch);
+      const sup = mode === 'wang' ? `${key} ${rc}` : `${key}${bx[2] ? ' *' + bx[2] : ''}`;
+      const word = `<span class="rw ${cls(key)}" title="${esc(rwTitle(ch))}" onclick="location.hash='#/查字?q=${encodeURIComponent(ch)}'">${esc(ch)}<sup class="ipa">${esc(sup)}</sup></span>`;
+      return `<span class="ln">${k >= 0 ? esc(t.slice(0, k)) + word + esc(t.slice(k + 1)) : esc(t) + ' ' + word}</span>`;
+    }).join('');
+    const lab = mode === 'wang' ? Object.entries(st.g).map(([L, g]) => `<span class="rw ${cls(L)}">${L}</span> ${esc(g)}`).join('<br>') : '';
+    h += `<div class="stz"><div class="poem">${lines}</div><div class="lab"><b>${esc(st.id)}</b><br>${lab}</div></div>`;
+  }
+  return h;
+};
+function rwTitle(ch) {
+  const v = D.chars[ch]; if (!v) return ch;
+  return v.r.filter(r => r.x).slice(0, 3).map(r => { const o = D.XY.get(r.x); return `${ch} ${o ? diwei(o) + ' ' + o.baxter : ''}  白—沙 ${r.b.map(b => '*' + b[0]).join(' ') || '—'}  鄭張 ${r.z.map(z => '*' + z[0]).join(' ') || '—'}`; }).join('\n');
+}
+function shijingStats() {
+  const S = D.wangbu.stats;
+  const pct = a => `${a['一致'] || 0} / ${(a['一致'] || 0) + (a['不一致'] || 0)}（${(100 * (a['一致'] || 0) / ((a['一致'] || 0) + (a['不一致'] || 0))).toFixed(1)}%）`;
+  return `<div class="card small"><p>王力《詩經韻讀》與 Baxter（1992）的押韻判定，共 305 篇。王力的押韻組 ${S.groups} 組，其中注明韻部的：單一韻部 ${S.labelled['部']} 組、合韻 ${S.labelled['合韻']} 組、通韻 ${S.labelled['通韻']} 組。由此得到 ${S.chars} 個韻腳字的王力韻部（合韻、通韻組中的字按王力擬音的韻母歸部）。</p>
+   <p class="mut">合韻：主元音相近、韻尾同類的韻部相押；通韻：主元音相同的陰聲、陽聲、入聲韻部相押（對轉）。王力此書不分冬部（併入侵部），葉部稱盍部。</p></div>
+  <h2>王力韻部與本站推得韻部的比較</h2>
+  <p class="small mut">把同一字的王力詩經韻部，與本站按白—沙、鄭張擬音推得的韻部相比（冬→侵視爲一致）。不一致處多爲脂微分部的界線、以及擬音所反映的諧聲證據與詩經押韻不同之處。</p>
+  <div class="row"><div class="card" style="flex:1 1 20rem"><b>白—沙 2014</b>：一致 ${pct(S.agree.bs)}<table class="small">${S.conf.bs.slice(0, 15).map(([w, b, n, ex]) => `<tr><td>王力 ${w}部</td><td>本站 ${b}部</td><td>${n}</td><td class="han">${[...ex].map(c => `<a href="#/查字?q=${encodeURIComponent(c)}">${c}</a>`).join('')}</td></tr>`).join('')}</table></div>
+  <div class="card" style="flex:1 1 20rem"><b>鄭張尚芳</b>：一致 ${pct(S.agree.zs)}<table class="small">${S.conf.zs.slice(0, 15).map(([w, b, n, ex]) => `<tr><td>王力 ${w}部</td><td>本站 ${b}部</td><td>${n}</td><td class="han">${[...ex].map(c => `<a href="#/查字?q=${encodeURIComponent(c)}">${c}</a>`).join('')}</td></tr>`).join('')}</table></div></div>
+  <h2>合韻·通韻</h2><div class="scroll"><table class="small"><tr><th>韻部</th><th>類型</th><th>組數</th></tr>${S.mix.map(([a, b, t, n]) => `<tr><td class="han">${a}·${b}</td><td>${t}</td><td>${n}</td></tr>`).join('')}</table></div>`;
+}
+
 PAGES['音變統計'] = PAGES['音變'] = async () => {
   await need('xiaoyun', 'chars');
   const T = (rows, cols) => { const m = {}; rows.forEach(r => m[r] = Object.fromEntries(cols.map(c => [c, 0]))); return m; };
@@ -296,6 +344,15 @@ const QUIZ = {
     const pool = [...D.XY.values()].filter(x => x.baxter && x.baxter !== o.baxter && (x.韻 === o.韻 || x.母 === o.母));
     return { q: `<span class="ipa">*${esc(r.b[0][0])}</span> <span class="small mut">（白—沙）</span> 的中古音？`, ans: o.baxter, opts: [o.baxter, ...sample([...new Set(pool.map(x => x.baxter))], 3)], rom: true, bm: { id: 'c:' + r.c + '|' + r.x, type: 'char', c: r.c, x: r.x }, note: `${r.c} *${r.b[0][0]} > ${o.baxter}（${diwei(o)}）` };
   } },
+  詩經韻腳歸部: { need: ['shijing', 'wangbu'], gen() {
+    const pool = [];
+    for (const p of D.shijing.poems) for (const st of p.s) for (const [L, g] of Object.entries(st.g)) if (/^.部$/.test(g) && st.l.filter(l => l[2] === L && l[1]).length >= 2) pool.push([p, st, L, g]);
+    const [p, st, L, g] = pick(pool);
+    const lines = st.l.map(([t, rw, l2]) => { if (l2 !== L || !rw) return esc(t); const k = t.lastIndexOf(rw); return k >= 0 ? esc(t.slice(0, k)) + `<b style="color:var(--acc)">${esc(rw)}</b>` + esc(t.slice(k + 1)) : esc(t); }).join('<br>');
+    const ans = g; const opts = sample(['之', '職', '蒸', '幽', '覺', '宵', '藥', '侯', '屋', '東', '魚', '鐸', '陽', '支', '錫', '耕', '脂', '質', '真', '微', '物', '文', '歌', '月', '元', '緝', '侵', '盍', '談'].map(b => b + '部').filter(b => b !== ans), 3);
+    const ch = st.l.find(l => l[2] === L && l[1])[1];
+    return { q: `<div style="font-size:1.15rem;line-height:1.9">${lines}</div><div class="small mut">${esc(p.t)} ${esc(st.id)}　紅字押韻，屬王力哪一部？</div>`, ans, opts: [ans, ...opts], bm: { id: 'c:' + ch + '|', type: 'char', c: ch, x: (D.chars?.[ch]?.r[0]?.x) || null }, note: `${p.t} ${st.id}：${g}（王力《詩經韻讀》）` };
+  } },
   術語拼音: { need: ['terms'], gen() {
     const a = pick(D.terms); const opts = sample(D.terms.filter(t => t.py !== a.py && t.cat === a.cat), 3).map(t => t.py);
     if (opts.length < 3) opts.push(...sample(D.terms.filter(t => t.py !== a.py && !opts.includes(t.py)), 3 - opts.length).map(t => t.py));
@@ -323,7 +380,7 @@ PAGES['測驗'] = async (qs) => {
   return h;
 };
 async function runQuiz(kind) {
-  const Q = QUIZ[kind]; await need(...Q.need);
+  const Q = QUIZ[kind]; await need(...Q.need, 'chars');
   const box = $('#quiz'); if (!box) return;
   let item; for (let i = 0; i < 20; i++) { try { item = Q.gen(); if (item && new Set(item.opts).size >= 4) break; } catch (e) { item = null; } }
   const opts = item.fixed ? item.opts : sample([...new Set(item.opts)].slice(0, 4), 4);
@@ -378,13 +435,15 @@ PAGES['說明'] = async () => {
   <h2>書籤小工具（Bookmarklet）</h2><p>把下面的按鈕拖到瀏覽器書籤列。在任何網頁選取漢字後點擊，即在小視窗中查 Syeng。</p>
   <p><a class="bmlet" href="${esc(bml)}">Syeng 查字</a></p>
   <h2>Anki 牌組</h2><p>匯入 Anki（檔案 → 匯入）。卡片 ID 固定，日後更新版本可直接覆蓋匯入。</p><ul>
-  ${[['all', '全部（五組）'], ['韻目', '二百六韻目：拼音、四聲相承、攝'], ['聲母', '三十八母：拼音、清濁、上古來源'], ['術語', '音韻學術語：拼音、說明'], ['字·上古中古', '常用字：音韻地位、白—沙、鄭張'], ['小韻·音韻地位', '《廣韻》小韻：代表字 → 音韻地位']].map(([k, d]) => `<li><a href="anki/syeng-${k}.apkg" download>syeng-${k}.apkg</a>${k !== 'all' ? `（<a href="anki/syeng-${k}.tsv" download>TSV</a>）` : ''}　<span class="mut small">${d}</span></li>`).join('')}</ul>
+  ${[['all', '全部（前五組，不含詩經）'], ['韻目', '二百六韻目：拼音、四聲相承、攝'], ['聲母', '三十八母：拼音、清濁、上古來源'], ['術語', '音韻學術語：拼音、說明'], ['字·上古中古', '常用字：音韻地位、白—沙、鄭張'], ['小韻·音韻地位', '《廣韻》小韻：代表字 → 音韻地位'], ['詩經韻腳·王力韻部', '詩經韻腳字 → 王力韻部（GPL-3.0）']].map(([k, d]) => `<li><a href="anki/syeng-${k}.apkg" download>syeng-${k}.apkg</a>${k !== 'all' ? `（<a href="anki/syeng-${k}.tsv" download>TSV</a>）` : ''}　<span class="mut small">${d}</span></li>`).join('')}</ul>
   <h2>資料來源</h2><ul>
   <li>《廣韻》小韻、反切、釋義、音韻地位及各家推導（Baxter、切韻拼音、unt、王力、潘悟雲、高本漢、普通話推導）：nk2028 <a href="https://github.com/nk2028/tshet-uinh-js">tshet-uinh</a> 0.15.4 與 <a href="https://github.com/nk2028/tshet-uinh-examples">tshet-uinh-examples</a>（MIT）。</li>
-  <li>白一平—沙加爾（2014）上古擬音、鄭張尚芳上古擬音、Baxter 中古音轉寫：英文維基詞典漢字條目，經 kaikki.org（wiktextract）抽取（CC BY-SA 4.0）。</li></ul>
+  <li>白一平—沙加爾（2014）上古擬音、鄭張尚芳上古擬音、Baxter 中古音轉寫：英文維基詞典漢字條目，經 kaikki.org（wiktextract）抽取（CC BY-SA 4.0）。</li>
+  <li>詩經押韻：王力《詩經韻讀》（1980）與 Baxter《A Handbook of Old Chinese Phonology》（1992）的押韻判定，由 List 等數位化，見 <a href="https://github.com/digling/ard-data">digling/ard-data</a>（GPL-3.0）。本站的詩經資料（shijing.json、wangbu.json）與據此生成的 Anki 牌組依 GPL-3.0 提供。</li></ul>
   <h2>本站的推得部分</h2><ul>
   <li><b>上古—中古讀音的對應</b>：維基詞典的抽取資料不保留多音字中上古讀音與中古讀音的配對。本站按聲調（*-ʔ／*-s／塞音尾）、音節類型（咽化或長元音 ↔ 一二四等）、韻尾類型（陰／陽／入）與聲母清濁評分配對。得分相同者標「對應未定」，無合適者標「未對應」。</li>
   <li><b>韻部歸屬</b>：按擬音主元音與韻尾歸入王力三十部，非兩家原書的標註。白—沙 *-ik 歸質部、*-iŋ 歸真部、*-iw 歸幽部；鄭張 *-iɡ 歸質部、*-iŋ 歸真部。</li>
+  <li><b>王力韻部（詩經韻腳）</b>：直接取自王力《詩經韻讀》的韻部注。合韻、通韻組裏的字，按王力擬音的韻母（從單一韻部組學得的對應）歸部。唐作藩《上古音手冊》等字表沒有可公開使用的數位資料，未收錄。</li>
   <li><b>韻目拼音</b>：用現代標準讀音，個別依音韻學慣例（如 上 shǎng、覺 jué、薺 jì、曾 zēng）。</li></ul>
   <p class="small mut">原書（白一平—沙加爾 2014、鄭張尚芳《上古音系》等）的內容不收錄於本站。</p>`;
 };

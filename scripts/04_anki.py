@@ -97,7 +97,17 @@ for no, o in XY.items():
         f"<div>{e(diwei(o))}</div><div class=rom>{e(o['baxter'])} · {e(o['tupa'])}</div>"
         f"<div class=mut>{e(o['攝'])}攝 · {e(o['韻目'])}韻 · 同音：{e(o['字'][:12])}</div>", f'xy:{no}')
 
-genanki.Package(list(decks.values())).write_to_file(OUT + 'syeng-all.apkg')
+# 6. 詩經韻腳·王力韻部（GPL-3.0 のため syeng-all には含めない）
+GPL_DECKS = {'詩經韻腳·王力韻部'}
+wangbu = json.load(open(D + 'wangbu.json', encoding='utf8'))['chars']
+for c, w in sorted(wangbu.items(), key=lambda x: -sum(x[1]['bu'].values())):
+    bus = '、'.join(f"{b}部" + (f"×{n}" if len(w['bu']) > 1 else '') for b, n in sorted(w['bu'].items(), key=lambda x: -x[1]))
+    refs = ' '.join(st for _, st in w['refs'][:6])
+    add('詩經韻腳·王力韻部', f"<div class=big>{e(c)}</div><div class=mut>詩經韻腳 · 王力韻部？</div>",
+        f"<div style='font-size:28px'>{e(bus)}</div><div class=rom>{e(' '.join('*' + x for x in w['rc']))}</div>"
+        f"<div class=mut>王力《詩經韻讀》 · {e(refs)}</div>", f'wang:{c}')
+
+genanki.Package([d for k, d in decks.items() if k not in GPL_DECKS]).write_to_file(OUT + 'syeng-all.apkg')
 for name, d in decks.items():
     genanki.Package([d]).write_to_file(OUT + f'syeng-{name}.apkg')
     with open(OUT + f'syeng-{name}.tsv', 'w', encoding='utf8', newline='') as f:

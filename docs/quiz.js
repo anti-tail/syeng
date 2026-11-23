@@ -189,7 +189,7 @@ function dist() {
   const ms = Object.keys(muDeng);
   for (const a of ms) for (const b of ms) if (a < b) {
     const A = yinOf(a), B = yinOf(b); if (!A || !B || A.音 !== B.音) continue;
-    if (muDeng[a].some(d => muDeng[b].includes(d))) continue;
+    if (!muDeng[a].length || !muDeng[b].length || muDeng[a].some(d => muDeng[b].includes(d))) continue;
     if (A.清濁 === B.清濁 || [a, b].sort().join('') === ['匣', '云'].sort().join('')) pairs.push([a, b]);
   }
   DIST = { yunDeng, muDeng, ym, yd, md, pairs };
@@ -303,7 +303,7 @@ const QK = {
     return { q: QT('qDengYun')(d), ans, pool, sim, type: 'han', bm: { id: 'y:' + D.yun206.find(z => z.name === ans).no, type: 'yun', no: D.yun206.find(z => z.name === ans).no }, note: `${ans}：${dset(yunDeng[ans])}　${QT('distNote')}` };
   } },
   聲母的等: { need: ['xiaoyun', 'yun206', 'mu'], gen() {
-    const { muDeng, md } = dist(); const m = pick(D.mu.filter(x => !QSET.zu || x.組 === QSET.zu || x.母 === QSET.zu)).母;
+    const { muDeng, md } = dist(); const m = pick(D.mu.filter(x => (!QSET.zu || x.組 === QSET.zu || x.母 === QSET.zu) && muDeng[x.母]?.length)).母;
     const ans = dset(muDeng[m]); if (!ans) return null;
     return { q: QT('qMuDeng')(`<span class="han">${m}</span>`), ans, pool: COMBOS, sim: simCombo, type: 'deng', bm: { id: 'm:' + m, type: 'mu', m }, note: `${m}：${DENG.map(d => md[m][d] ? d + '×' + md[m][d] : '').filter(Boolean).join(' ')}　${QT('distNote')}` };
   } },
